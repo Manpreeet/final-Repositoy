@@ -1,0 +1,109 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:orientation="vertical"
+        android:weightSum="1" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight=".33" >
+
+            <ImageView
+                android:id="@+id/appLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="35dip"
+                android:contentDescription="@null"
+                android:src="@drawable/logo" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_weight=".15"
+            android:background="#fff"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/emailField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawableLeft="@drawable/ic_action_email"
+                android:hint="@string/email_hint"
+                android:inputType="textEmailAddress" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dip"
+                android:background="@drawable/text_divider" >
+            </View>
+
+            <EditText
+                android:id="@+id/passwordField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawableLeft="@drawable/ic_action_secure"
+                android:hint="@string/password_hint"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_marginTop="10dip"
+            android:layout_weight=".12"
+            android:contentDescription="@null"
+            android:onClick="onClickLogin"
+            android:src="@drawable/signin_btn" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_marginLeft="20dip"
+            android:layout_marginRight="20dip"
+            android:layout_weight=".10"
+            android:background="@null"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/forgetPasswordText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:onClick="onClickForgetPassword"
+                android:text="@string/forget_password"
+                android:textColor="@android:color/white" >
+            </TextView>
+
+            <Button
+                android:id="@+id/signUpText"
+                android:layout_width="wrap_content"
+                android:layout_height="20dip"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:onClick="onClickSignUp"
+                android:text="@string/sign_up"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" >
+            </Button>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

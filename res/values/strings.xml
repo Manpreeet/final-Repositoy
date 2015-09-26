@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TaskApplication</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <!--color declaration  -->
+    <string name="app_background_color">#171717</string>
+
+    <!-- Login activity content declaration -->
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="sign_up">New here? Sign up</string>
+    
+    
+    <!-- Forget password activity content declaration -->
+    <string name="back_to_login">Back to Login</string>
+</resources>
