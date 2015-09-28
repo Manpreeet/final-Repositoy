@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff
+        "
+        android:padding="5dip" >
+
+        <TextView
+            android:id="@+id/commentMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sdfssdfdfsdfsdfsdfsdfsfsdfdsfsdfsdfsdssfsfdsfsdsd"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/commentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/commentMessage"
+            android:layout_marginTop="5dip"
+            android:text="(Gairy jacques 9/3/15)"
+            android:textColor="@android:color/black"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</LinearLayout>
