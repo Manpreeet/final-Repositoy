@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.tarsem.application;
+package com.tarskism.application;
 
 import android.app.Application;
 import android.text.TextUtils;

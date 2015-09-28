@@ -37,7 +37,7 @@
             android:orientation="vertical" >
 
             <EditText
-                android:id="@+id/emailField"
+                android:id="@+id/registrationEmailField"
                 android:layout_width="match_parent"
                 android:layout_height="40dip"
                 android:background="@null"
@@ -52,13 +52,13 @@
                 android:background="@drawable/text_divider" />
 
             <EditText
-                android:id="@+id/emailText"
+                android:id="@+id/registrationFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="40dip"
                 android:background="@null"
-                android:drawableLeft="@drawable/ic_action_email"
+                android:drawableLeft="@drawable/name"
                 android:ems="10"
-                android:hint="@string/email_hint"
+                android:hint="First Name"
                 android:inputType="textEmailAddress" />
 
             <View
@@ -67,13 +67,13 @@
                 android:background="@drawable/text_divider" />
 
             <EditText
-                android:id="@+id/firstName"
+                android:id="@+id/registrationLastName"
                 android:layout_width="match_parent"
                 android:layout_height="40dip"
                 android:background="@null"
                 android:drawableLeft="@drawable/name"
                 android:ems="10"
-                android:hint="@string/email_hint"
+                android:hint="Last Name"
                 android:inputType="text" />
 
             <View
@@ -82,28 +82,13 @@
                 android:background="@drawable/text_divider" />
 
             <EditText
-                android:id="@+id/lastName"
-                android:layout_width="match_parent"
-                android:layout_height="40dip"
-                android:background="@null"
-                android:drawableLeft="@drawable/name"
-                android:ems="10"
-                android:hint="@string/email_hint"
-                android:inputType="text" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dip"
-                android:background="@drawable/text_divider" />
-
-            <EditText
-                android:id="@+id/companyName"
+                android:id="@+id/registrationCompanyName"
                 android:layout_width="match_parent"
                 android:layout_height="40dip"
                 android:background="@null"
                 android:drawableLeft="@drawable/company"
                 android:ems="10"
-                android:hint="@string/email_hint"
+                android:hint="Company"
                 android:inputType="text" />
 
             <View
@@ -112,13 +97,13 @@
                 android:background="@drawable/text_divider" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/registrationPasswrod"
                 android:layout_width="match_parent"
                 android:layout_height="40dip"
                 android:background="@null"
                 android:drawableLeft="@drawable/ic_action_secure"
                 android:ems="10"
-                android:hint="@string/email_hint"
+                android:hint="@string/password_hint"
                 android:inputType="textPassword" />
 
             <View
@@ -127,23 +112,23 @@
                 android:background="@drawable/text_divider" />
 
             <EditText
-                android:id="@+id/confirmPassword"
+                android:id="@+id/registrationConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="40dip"
                 android:background="@null"
                 android:drawableLeft="@drawable/ic_action_secure"
                 android:ems="10"
-                android:hint="@string/email_hint"
+                android:hint="Confirm Password"
                 android:inputType="textPassword" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="0dip"
+                android:layout_height="1dip"
                 android:background="@drawable/text_divider" />
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/loginButton"
+            android:id="@+id/signUpBtn"
             android:layout_width="match_parent"
             android:layout_height="0dip"
             android:layout_marginLeft="20dip"
@@ -151,7 +136,7 @@
             android:layout_marginTop="10dip"
             android:layout_weight=".12"
             android:contentDescription="@null"
-            android:onClick="onClickLogin"
+            android:onClick="onClickSignUp"
             android:src="@drawable/signup_btn" />
 
         <RelativeLayout
@@ -178,15 +163,18 @@
                     android:paddingTop="5dip"
                     android:src="@drawable/back" />
 
-                <TextView
+                <Button
                     android:id="@+id/backText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="120dip"
+                    android:layout_height="20dip"
+                    android:background="@null"
+                    android:gravity="left"
                     android:layout_marginLeft="5dip"
                     android:onClick="onClickBack"
                     android:text="@string/back_to_login"
-                    android:textColor="@android:color/white" >
-                </TextView>
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp" >
+                </Button>
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>

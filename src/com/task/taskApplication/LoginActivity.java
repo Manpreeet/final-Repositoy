@@ -1,20 +1,11 @@
 package com.task.taskApplication;
 
-import org.json.JSONObject;
-
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ProgressBar;
 
-import com.android.volley.Request.Method;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.tarsem.application.TaskApplication;
 import com.tarsem.constant.ApplicationConstant;
 import com.tarsem.constant.Constant;
 import com.tarsem.control.ActivityController;
@@ -24,16 +15,21 @@ import com.tarsem.utility.Utility;
 
 public class LoginActivity extends ParentActivity {
 
-	private TextView signUpText, forgetPasswordText;
 	ParentActivity parentActivity;
 	Context context;
 	private EditText emailField, passwordField;
+	ProgressBar progressBar2;
 
 	@Override
 	protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
 		setContentView(R.layout.activity_main);
 		findAttributesId();
+		if (Constant.getLoggedUserId(context) != 0) {
+			ActivityController.startActivityController(Constant.homeActivity,
+					null, LoginActivity.this, true);
+
+		}
 	}
 
 	/**
@@ -43,10 +39,9 @@ public class LoginActivity extends ParentActivity {
 	private void findAttributesId() {
 		parentActivity = this;
 		context = this;
-		signUpText = (TextView) findViewById(R.id.signUpText);
 		emailField = (EditText) findViewById(R.id.emailField);
 		passwordField = (EditText) findViewById(R.id.passwordField);
-
+		progressBar2 = (ProgressBar) findViewById(R.id.progressBar2);
 	}
 
 	/**
@@ -86,11 +81,10 @@ public class LoginActivity extends ParentActivity {
 		} else {
 			try {
 				if (isConnectedToInternet()) {
-					showProgressBar();
-					
-					 loginRequestToServer(email, password);
-					 
-					//loginRequest(email, password);
+					progressBar2.setVisibility(View.VISIBLE);
+					loginRequestToServer(email, password);
+
+					// loginRequest(email, password);
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -99,7 +93,6 @@ public class LoginActivity extends ParentActivity {
 		}
 	}
 
-	
 	/**
 	 * developer:Manpreet date:26-Sep-2015 return:void description: method for
 	 * send login request to server
@@ -107,24 +100,27 @@ public class LoginActivity extends ParentActivity {
 	private void loginRequestToServer(String email, String password) {
 		// taskism.com/webservice001/index.php?action=login&email=gairy@1234.com&password=1234pass
 		new ServerAsyncTask(ApplicationConstant.appurl
-				+ ApplicationConstant.loginrequestType + "&email" + email
-				+ "&password" + password, context, new ResponseCallback() {
+				+ ApplicationConstant.loginrequestType + "&" + Constant.email
+				+ "=" + email.trim() + "&" + Constant.password + "="
+				+ password.trim(), context, new ResponseCallback() {
 
 			@Override
 			public void onSuccessRecieve(Object object) {
-				dismissProgressBar();
+				progressBar2.setVisibility(View.GONE);
+				ActivityController.startActivityController(
+						Constant.homeActivity, null, LoginActivity.this, true);
 			}
 
 			@Override
 			public void onErrorRecieve(Object object) {
-				dismissProgressBar();
+				progressBar2.setVisibility(View.GONE);
 
 				showToastMessage((String) object);
 				emailField.setText("");
 				passwordField.setText("");
 				emailField.requestFocus();
 			}
-		}).execute();
+		}, ApplicationConstant.loginrequestType).execute();
 	}
 
 	/**
@@ -143,6 +139,9 @@ public class LoginActivity extends ParentActivity {
 	 * perform forget password event
 	 */
 	public void onClickForgetPassword(View view) {
+
+		ActivityController.startActivityController(
+				Constant.forgetPasswrodActivityController, null, this, false);
 
 	}
 

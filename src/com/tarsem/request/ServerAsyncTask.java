@@ -13,6 +13,9 @@ import org.json.JSONObject;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.tarsem.constant.ApplicationConstant;
+import com.tarsem.constant.Constant;
+import com.tarsem.parser.CommonParser;
 import com.tarsem.responsecallback.ResponseCallback;
 
 /**
@@ -25,16 +28,16 @@ public class ServerAsyncTask extends AsyncTask<Void, Void, Void> {
 		 */
 
 	private String url;
-	private Context context;
-	private String response = null;
+	private String response = null, type;
 	ResponseCallback responseCallback;
-	private JSONObject responseObject = null;
+	Context context;
 
 	public ServerAsyncTask(String url, Context context,
-			ResponseCallback responseCallback) {
+			ResponseCallback responseCallback, String type) {
 		this.url = url;
 		this.context = context;
 		this.responseCallback = responseCallback;
+		this.type = type;
 	}
 
 	/*
@@ -51,10 +54,9 @@ public class ServerAsyncTask extends AsyncTask<Void, Void, Void> {
 			conn.setRequestMethod("GET");
 
 			// read the response
-			System.out.println("Response Code: " +conn.getResponseCode());
+			System.out.println("Response Code: " + conn.getResponseCode());
 			InputStream in = new BufferedInputStream(conn.getInputStream());
-			 response = org.apache.commons.io.IOUtils.toString(in,
-					"UTF-8");
+			response = org.apache.commons.io.IOUtils.toString(in, "UTF-8");
 			System.out.println(response);
 			// responseObject = new HttpRequest().getJSONResponse(url);
 		} catch (Exception e) {
@@ -75,20 +77,49 @@ public class ServerAsyncTask extends AsyncTask<Void, Void, Void> {
 
 		try {
 			if (response != null) {
-				int responseValue = new JSONObject(response).getInt("success");
-				if (responseValue == 0) {
-					// for parsing class
-					responseCallback.onErrorRecieve("User not found");
 
+				if (!type.equals(ApplicationConstant.getTaskListRequest)) {
+
+					int responseValue = new JSONObject(response)
+							.getInt("success");
+					if (responseValue == 0) {
+						// for parsing class
+
+						if (type.equals(ApplicationConstant.loginrequestType)) {
+							responseCallback.onErrorRecieve("User not found");
+
+						} else {
+							responseCallback.onErrorRecieve(new JSONObject(
+									response).get("warning"));
+						}
+
+					} else {
+						if (type.equals(ApplicationConstant.loginrequestType)) {
+							new CommonParser().loginResponseParser(response,
+									responseCallback, context);
+						} else if (type
+								.equals(ApplicationConstant.registrationRequestType)) {
+							responseCallback.onSuccessRecieve("Success");
+						} else if (type
+								.equals(ApplicationConstant.forgetRequestType)) {
+							responseCallback
+									.onSuccessRecieve("link has been sent to email address for regenerate password");
+						}
+					}
 				} else {
+					new CommonParser().allTaskResponseParser(response,
+							responseCallback);
 
+					/*
+					 * new CommonParser().loginResponseParser(response,
+					 * responseCallback, parentActivity)
+					 */
 				}
 			}
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 
 	}
-
 }

@@ -1,4 +1,5 @@
 package com.task.taskApplication;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -80,8 +81,7 @@ public class ParentActivity extends Activity {
 		Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
 		toast.show();
 	}
-	
-	
+
 	/**
 	 * @user: manpreet
 	 * @date Sep 24, 2015
@@ -89,22 +89,22 @@ public class ParentActivity extends Activity {
 	 * @exception
 	 * @description method for check internet connection
 	 */
-		
-	public boolean isConnectedToInternet(){
+
+	public boolean isConnectedToInternet() {
 		try {
-			if(Utility.isConnectedToInternet(getApplicationContext())){
+			if (Utility.isConnectedToInternet(getApplicationContext())) {
 				return true;
-			}
-			else{
+			} else {
 				dismissProgressBar();
-				//CustomDialogView.showDialogMessage(masterActivity, "", ApplicationConstant.INTERNET_NOT_AVAIL);
+				// CustomDialogView.showDialogMessage(masterActivity, "",
+				// ApplicationConstant.INTERNET_NOT_AVAIL);
 			}
 		} catch (Exception e) {
 			showToastMessage("no internet connection");
-			//LOGGER.error("Error occured in the isConnectedToInternet method", e);
+			// LOGGER.error("Error occured in the isConnectedToInternet method",
+			// e);
 		}
 		return false;
 	}
-	
-	
+
 }
