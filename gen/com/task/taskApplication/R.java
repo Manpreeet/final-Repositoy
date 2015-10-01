@@ -254,6 +254,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int alertDialogTheme=0x7f01005e;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int animationVelocity=0x7f0100d9;
         /**  The length of the arrow head when formed to make an arrow 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -340,6 +348,61 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int barLength=0x7f0100ba;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int behindOffset=0x7f0100e8;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int behindScrollScale=0x7f0100ea;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int behindWidth=0x7f0100e9;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int border=0x7f0100e0;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int border_color=0x7f0100e2;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int border_width=0x7f0100e1;
         /**  Style for buttons without an explicit border, often used in groups. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -423,6 +486,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int checkedTextViewStyle=0x7f010067;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int circularImageViewStyle=0x7f0100e4;
         /**  Close button icon 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -740,6 +807,22 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int expandActivityOverflowButtonDrawable=0x7f01009e;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fadeDegree=0x7f0100f0;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int fadeEnabled=0x7f0100ef;
         /**  The max gap between the bars when they are parallel to each other 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -814,6 +897,34 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int initialActivityCount=0x7f01009d;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int insetBottom=0x7f0100df;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int insetLeft=0x7f0100dc;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int insetRight=0x7f0100dd;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int insetTop=0x7f0100de;
         /**  Specifies whether the theme is light, otherwise it is dark. 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
@@ -942,6 +1053,14 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int maxButtonHeight=0x7f0100aa;
+        /** <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int measureFactor=0x7f0100db;
         /**  When set to true, all children with a weight will be considered having
              the minimum size of the largest child. If false, all children are
              measured normally. 
@@ -953,6 +1072,17 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int measureWithLargestChild=0x7f0100a0;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>left</code></td><td>0</td><td></td></tr>
+<tr><td><code>right</code></td><td>1</td><td></td></tr>
+</table>
+         */
+        public static final int mode=0x7f0100e5;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -986,6 +1116,26 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 </table>
          */
         public static final int navigationMode=0x7f01006d;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int offColor=0x7f0100d6;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int offDrawable=0x7f0100cc;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int onColor=0x7f0100d5;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int onDrawable=0x7f0100cb;
         /**  Whether the popup window should overlap its anchor view. 
          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
@@ -1098,6 +1248,14 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int radioButtonStyle=0x7f010069;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int radius=0x7f0100da;
         /**  Default RatingBar style. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1130,6 +1288,40 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int selectableItemBackgroundBorderless=0x7f010036;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int selectorDrawable=0x7f0100f2;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int selectorEnabled=0x7f0100f1;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int shadow=0x7f0100e3;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int shadowDrawable=0x7f0100ed;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int shadowWidth=0x7f0100ee;
         /**  How this item should display in the Action Bar, if present. 
          <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
@@ -1354,6 +1546,22 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int thickness=0x7f0100bb;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int thumbColor=0x7f0100d7;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int thumbDrawable=0x7f0100cd;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+         */
+        public static final int thumbPressedColor=0x7f0100d8;
         /**  Amount of padding on either side of text within the switch thumb. 
          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
@@ -1365,6 +1573,55 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int thumbTextPadding=0x7f0100c0;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int thumb_height=0x7f0100d4;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int thumb_margin=0x7f0100ce;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int thumb_marginBottom=0x7f0100d0;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int thumb_marginLeft=0x7f0100d1;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int thumb_marginRight=0x7f0100d2;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int thumb_marginTop=0x7f0100cf;
+        /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+         */
+        public static final int thumb_width=0x7f0100d3;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1452,11 +1709,43 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int toolbarStyle=0x7f01003b;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>margin</code></td><td>0</td><td></td></tr>
+<tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
+<tr><td><code>none</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static final int touchModeAbove=0x7f0100eb;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>margin</code></td><td>0</td><td></td></tr>
+<tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
+<tr><td><code>none</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static final int touchModeBehind=0x7f0100ec;
         /**  Drawable to use as the "track" that the switch thumb slides within. 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int track=0x7f0100bf;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int viewAbove=0x7f0100e6;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int viewBehind=0x7f0100e7;
         /**  Voice button icon 
          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -1907,6 +2196,7 @@ containing a value of this type.
         public static final int highlight_alpha_material_colored=0x7f070004;
         public static final int highlight_alpha_material_dark=0x7f070003;
         public static final int highlight_alpha_material_light=0x7f070002;
+        public static final int list_padding=0x7f07004b;
         /**  The width of the big icons in notifications. 
          */
         public static final int notification_large_icon_height=0x7f070025;
@@ -1917,6 +2207,8 @@ containing a value of this type.
          Time) 
          */
         public static final int notification_subtext_size=0x7f070026;
+        public static final int shadow_width=0x7f07004c;
+        public static final int slidingmenu_offset=0x7f07004a;
     }
     public static final class drawable {
         public static final int abc_ab_share_pack_mtrl_alpha=0x7f020000;
@@ -2004,172 +2296,180 @@ containing a value of this type.
         public static final int mark_task=0x7f020052;
         public static final int my_progress_indeterminate=0x7f020053;
         public static final int name=0x7f020054;
-        public static final int notification_template_icon_bg=0x7f020062;
+        public static final int notification_template_icon_bg=0x7f020063;
         public static final int password=0x7f020055;
         public static final int reset_btn=0x7f020056;
         public static final int settings=0x7f020057;
-        public static final int shift_task=0x7f020058;
-        public static final int signin_btn=0x7f020059;
-        public static final int signup_btn=0x7f02005a;
-        public static final int swipe_logo=0x7f02005b;
-        public static final int task_selection=0x7f02005c;
-        public static final int text_bg=0x7f02005d;
-        public static final int text_divider=0x7f02005e;
-        public static final int topbar=0x7f02005f;
-        public static final int toptext_bg=0x7f020060;
-        public static final int unmark_task=0x7f020061;
+        public static final int shadow=0x7f020058;
+        public static final int shift_task=0x7f020059;
+        public static final int signin_btn=0x7f02005a;
+        public static final int signup_btn=0x7f02005b;
+        public static final int swipe_logo=0x7f02005c;
+        public static final int task_selection=0x7f02005d;
+        public static final int text_bg=0x7f02005e;
+        public static final int text_divider=0x7f02005f;
+        public static final int topbar=0x7f020060;
+        public static final int toptext_bg=0x7f020061;
+        public static final int unmark_task=0x7f020062;
     }
     public static final class id {
-        public static final int action0=0x7f090088;
-        public static final int action_bar=0x7f09003e;
+        public static final int action0=0x7f09008e;
+        public static final int action_bar=0x7f090043;
         public static final int action_bar_activity_content=0x7f090003;
-        public static final int action_bar_container=0x7f09003d;
-        public static final int action_bar_root=0x7f090039;
+        public static final int action_bar_container=0x7f090042;
+        public static final int action_bar_root=0x7f09003e;
         public static final int action_bar_spinner=0x7f090002;
-        public static final int action_bar_subtitle=0x7f090022;
-        public static final int action_bar_title=0x7f090021;
-        public static final int action_context_bar=0x7f09003f;
-        public static final int action_divider=0x7f09008c;
+        public static final int action_bar_subtitle=0x7f090027;
+        public static final int action_bar_title=0x7f090026;
+        public static final int action_context_bar=0x7f090044;
+        public static final int action_divider=0x7f090092;
         public static final int action_menu_divider=0x7f090005;
         public static final int action_menu_presenter=0x7f090006;
-        public static final int action_mode_bar=0x7f09003b;
-        public static final int action_mode_bar_stub=0x7f09003a;
-        public static final int action_mode_close_button=0x7f090023;
-        public static final int action_settings=0x7f090095;
-        public static final int activity_chooser_view_content=0x7f090024;
-        public static final int alertTitle=0x7f09002e;
-        public static final int always=0x7f090019;
-        public static final int appLogo=0x7f090058;
-        public static final int backText=0x7f09005b;
-        public static final int beginning=0x7f09001e;
-        public static final int buttonPanel=0x7f090034;
-        public static final int cancel_action=0x7f090089;
-        public static final int checkStatus=0x7f090084;
-        public static final int checkbox=0x7f090036;
-        public static final int chronometer=0x7f09008f;
-        public static final int collapseActionView=0x7f09001a;
-        public static final int commentCount=0x7f090087;
-        public static final int commentImage=0x7f090086;
-        public static final int commentMessage=0x7f090082;
-        public static final int commentTime=0x7f090083;
-        public static final int commentsInput=0x7f090053;
-        public static final int commentsList=0x7f090055;
-        public static final int commentsTitle=0x7f09004f;
-        public static final int contentPanel=0x7f09002f;
-        public static final int currentDate=0x7f09005c;
-        public static final int custom=0x7f090033;
-        public static final int customPanel=0x7f090032;
-        public static final int decor_content_parent=0x7f09003c;
-        public static final int default_activity_button=0x7f090027;
-        public static final int disableHome=0x7f09000d;
-        public static final int edit_query=0x7f090040;
-        public static final int emailField=0x7f09005f;
-        public static final int end=0x7f09001f;
-        public static final int end_padder=0x7f090094;
-        public static final int expand_activities_button=0x7f090025;
-        public static final int expanded_menu=0x7f090035;
-        public static final int forgetEmailAddress=0x7f090059;
-        public static final int forgetPasswordText=0x7f090062;
-        public static final int headerlayout=0x7f09004d;
+        public static final int action_mode_bar=0x7f090040;
+        public static final int action_mode_bar_stub=0x7f09003f;
+        public static final int action_mode_close_button=0x7f090028;
+        public static final int action_settings=0x7f09009c;
+        public static final int activity_chooser_view_content=0x7f090029;
+        public static final int alertTitle=0x7f090033;
+        public static final int always=0x7f09001a;
+        public static final int appLogo=0x7f09005d;
+        public static final int backText=0x7f090060;
+        public static final int beginning=0x7f09001f;
+        public static final int buttonPanel=0x7f090039;
+        public static final int cancel_action=0x7f09008f;
+        public static final int checkStatus=0x7f090089;
+        public static final int checkbox=0x7f09003b;
+        public static final int chronometer=0x7f090095;
+        public static final int collapseActionView=0x7f09001b;
+        public static final int commentCount=0x7f09008c;
+        public static final int commentImage=0x7f09008b;
+        public static final int commentMessage=0x7f090087;
+        public static final int commentTime=0x7f090088;
+        public static final int commentsInput=0x7f090058;
+        public static final int commentsList=0x7f09005a;
+        public static final int commentsTitle=0x7f090054;
+        public static final int contentPanel=0x7f090034;
+        public static final int currentDate=0x7f090061;
+        public static final int custom=0x7f090038;
+        public static final int customPanel=0x7f090037;
+        public static final int decor_content_parent=0x7f090041;
+        public static final int default_activity_button=0x7f09002c;
+        public static final int disableHome=0x7f09000e;
+        public static final int edit_query=0x7f090045;
+        public static final int emailField=0x7f090064;
+        public static final int end=0x7f090020;
+        public static final int end_padder=0x7f09009a;
+        public static final int expand_activities_button=0x7f09002a;
+        public static final int expanded_menu=0x7f09003a;
+        public static final int forgetEmailAddress=0x7f09005e;
+        public static final int forgetPasswordText=0x7f090067;
+        public static final int fullscreen=0x7f090024;
+        public static final int headerlayout=0x7f090052;
         public static final int home=0x7f090000;
-        public static final int homeAsUp=0x7f09000e;
-        public static final int icon=0x7f090029;
-        public static final int ifRoom=0x7f09001b;
-        public static final int image=0x7f090026;
-        public static final int imageView1=0x7f090069;
-        public static final int imageView2=0x7f090075;
-        public static final int imageView3=0x7f090079;
-        public static final int imageView4=0x7f090071;
-        public static final int includeLayout=0x7f09004e;
-        public static final int info=0x7f090093;
-        public static final int line1=0x7f09008d;
-        public static final int line3=0x7f090091;
-        public static final int listLV=0x7f090065;
-        public static final int listMode=0x7f09000a;
-        public static final int list_item=0x7f090028;
-        public static final int loadingProgress=0x7f090056;
-        public static final int loginButton=0x7f090061;
-        public static final int media_actions=0x7f09008b;
-        public static final int menu=0x7f090066;
-        public static final int middle=0x7f090020;
-        public static final int multiply=0x7f090014;
-        public static final int navigationImage=0x7f090050;
-        public static final int never=0x7f09001c;
-        public static final int noRecordFoundText=0x7f090057;
-        public static final int none=0x7f09000f;
-        public static final int normal=0x7f09000b;
-        public static final int parentPanel=0x7f09002b;
-        public static final int passwordField=0x7f090060;
-        public static final int progressBar2=0x7f090064;
+        public static final int homeAsUp=0x7f09000f;
+        public static final int icon=0x7f09002e;
+        public static final int ifRoom=0x7f09001c;
+        public static final int image=0x7f09002b;
+        public static final int imageView1=0x7f09006e;
+        public static final int imageView2=0x7f09007a;
+        public static final int imageView3=0x7f09007e;
+        public static final int imageView4=0x7f090076;
+        public static final int includeLayout=0x7f090053;
+        public static final int info=0x7f090099;
+        public static final int left=0x7f090022;
+        public static final int line1=0x7f090093;
+        public static final int line3=0x7f090097;
+        public static final int listLV=0x7f09006a;
+        public static final int listMode=0x7f09000b;
+        public static final int list_item=0x7f09002d;
+        public static final int loadingProgress=0x7f09005b;
+        public static final int loginButton=0x7f090066;
+        public static final int margin=0x7f090025;
+        public static final int media_actions=0x7f090091;
+        public static final int menu=0x7f09006b;
+        public static final int middle=0x7f090021;
+        public static final int multiply=0x7f090015;
+        public static final int navigationImage=0x7f090055;
+        public static final int never=0x7f09001d;
+        public static final int noRecordFoundText=0x7f09005c;
+        public static final int none=0x7f090010;
+        public static final int normal=0x7f09000c;
+        public static final int parentPanel=0x7f090030;
+        public static final int passwordField=0x7f090065;
+        public static final int progressBar2=0x7f090069;
         public static final int progress_circular=0x7f090007;
         public static final int progress_horizontal=0x7f090008;
-        public static final int radio=0x7f090038;
-        public static final int registrationCompanyName=0x7f09007e;
-        public static final int registrationConfirmPassword=0x7f090080;
-        public static final int registrationEmailField=0x7f09007b;
-        public static final int registrationFirstName=0x7f09007c;
-        public static final int registrationLastName=0x7f09007d;
-        public static final int registrationPasswrod=0x7f09007f;
-        public static final int rel_history=0x7f09006f;
-        public static final int rel_home=0x7f090067;
-        public static final int rel_settings=0x7f090077;
-        public static final int rel_share=0x7f09006b;
-        public static final int rel_trip_search=0x7f090073;
-        public static final int saveButton=0x7f090054;
-        public static final int screen=0x7f090015;
-        public static final int scrollView=0x7f090030;
-        public static final int search_badge=0x7f090042;
-        public static final int search_bar=0x7f090041;
-        public static final int search_button=0x7f090043;
-        public static final int search_close_btn=0x7f090048;
-        public static final int search_edit_frame=0x7f090044;
-        public static final int search_go_btn=0x7f09004a;
-        public static final int search_mag_icon=0x7f090045;
-        public static final int search_plate=0x7f090046;
-        public static final int search_src_text=0x7f090047;
-        public static final int search_voice_btn=0x7f09004b;
-        public static final int select_dialog_listview=0x7f09004c;
-        public static final int shareIcon=0x7f09006d;
-        public static final int shortcut=0x7f090037;
-        public static final int showCustom=0x7f090010;
-        public static final int showHome=0x7f090011;
-        public static final int showTitle=0x7f090012;
-        public static final int signInView=0x7f09007a;
-        public static final int signUpBtn=0x7f090081;
-        public static final int signUpText=0x7f090063;
+        public static final int radio=0x7f09003d;
+        public static final int registrationCompanyName=0x7f090083;
+        public static final int registrationConfirmPassword=0x7f090085;
+        public static final int registrationEmailField=0x7f090080;
+        public static final int registrationFirstName=0x7f090081;
+        public static final int registrationLastName=0x7f090082;
+        public static final int registrationPasswrod=0x7f090084;
+        public static final int rel_history=0x7f090074;
+        public static final int rel_home=0x7f09006c;
+        public static final int rel_settings=0x7f09007c;
+        public static final int rel_share=0x7f090070;
+        public static final int rel_trip_search=0x7f090078;
+        public static final int right=0x7f090023;
+        public static final int saveButton=0x7f090059;
+        public static final int screen=0x7f090016;
+        public static final int scrollView=0x7f090035;
+        public static final int search_badge=0x7f090047;
+        public static final int search_bar=0x7f090046;
+        public static final int search_button=0x7f090048;
+        public static final int search_close_btn=0x7f09004d;
+        public static final int search_edit_frame=0x7f090049;
+        public static final int search_go_btn=0x7f09004f;
+        public static final int search_mag_icon=0x7f09004a;
+        public static final int search_plate=0x7f09004b;
+        public static final int search_src_text=0x7f09004c;
+        public static final int search_voice_btn=0x7f090050;
+        public static final int select_dialog_listview=0x7f090051;
+        public static final int selected_view=0x7f090009;
+        public static final int shareIcon=0x7f090072;
+        public static final int shortcut=0x7f09003c;
+        public static final int showCustom=0x7f090011;
+        public static final int showHome=0x7f090012;
+        public static final int showTitle=0x7f090013;
+        public static final int signInView=0x7f09007f;
+        public static final int signUpBtn=0x7f090086;
+        public static final int signUpText=0x7f090068;
+        public static final int slidingmenumain=0x7f09009b;
         public static final int split_action_bar=0x7f090004;
-        public static final int src_atop=0x7f090016;
-        public static final int src_in=0x7f090017;
-        public static final int src_over=0x7f090018;
-        public static final int status_bar_latest_event_content=0x7f09008a;
-        public static final int submitForgetPassword=0x7f09005a;
-        public static final int submit_area=0x7f090049;
-        public static final int swipe_refresh=0x7f09005d;
-        public static final int tabMode=0x7f09000c;
-        public static final int taskDate=0x7f090052;
-        public static final int taskName=0x7f090085;
-        public static final int taskTitle=0x7f090051;
-        public static final int text=0x7f090092;
-        public static final int text2=0x7f090090;
-        public static final int textSpacerNoButtons=0x7f090031;
-        public static final int time=0x7f09008e;
-        public static final int title=0x7f09002a;
-        public static final int title_template=0x7f09002d;
-        public static final int topPanel=0x7f09002c;
-        public static final int tv_history=0x7f090070;
-        public static final int tv_home=0x7f090068;
-        public static final int tv_settings=0x7f090078;
-        public static final int tv_share=0x7f09006c;
-        public static final int tv_trip_search=0x7f090074;
+        public static final int src_atop=0x7f090017;
+        public static final int src_in=0x7f090018;
+        public static final int src_over=0x7f090019;
+        public static final int status_bar_latest_event_content=0x7f090090;
+        public static final int submitForgetPassword=0x7f09005f;
+        public static final int submit_area=0x7f09004e;
+        public static final int swipe_refresh=0x7f090062;
+        public static final int tabMode=0x7f09000d;
+        public static final int taskDate=0x7f090057;
+        public static final int taskName=0x7f09008a;
+        public static final int taskTitle=0x7f090056;
+        public static final int text=0x7f090098;
+        public static final int text2=0x7f090096;
+        public static final int textSpacerNoButtons=0x7f090036;
+        public static final int time=0x7f090094;
+        public static final int title=0x7f09002f;
+        public static final int title_template=0x7f090032;
+        public static final int topPanel=0x7f090031;
+        public static final int tv_history=0x7f090075;
+        public static final int tv_home=0x7f09006d;
+        public static final int tv_settings=0x7f09007d;
+        public static final int tv_share=0x7f090071;
+        public static final int tv_trip_search=0x7f090079;
         public static final int up=0x7f090001;
-        public static final int useLogo=0x7f090013;
-        public static final int userTasksList=0x7f09005e;
-        public static final int view_history=0x7f090072;
-        public static final int view_home=0x7f09006a;
-        public static final int view_share=0x7f09006e;
-        public static final int view_trip_search=0x7f090076;
-        public static final int withText=0x7f09001d;
-        public static final int wrap_content=0x7f090009;
+        public static final int useLogo=0x7f090014;
+        public static final int userTasksList=0x7f090063;
+        public static final int view_history=0x7f090077;
+        public static final int view_home=0x7f09006f;
+        public static final int view_settings=0x7f09008d;
+        public static final int view_share=0x7f090073;
+        public static final int view_trip_search=0x7f09007b;
+        public static final int withText=0x7f09001e;
+        public static final int wrap_content=0x7f09000a;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur=0x7f080001;
@@ -2241,18 +2541,20 @@ containing a value of this type.
         public static final int custom_comment_list=0x7f03001e;
         public static final int custom_user_task=0x7f03001f;
         public static final int header_layout=0x7f030020;
-        public static final int notification_media_action=0x7f030021;
-        public static final int notification_media_cancel_action=0x7f030022;
-        public static final int notification_template_big_media=0x7f030023;
-        public static final int notification_template_big_media_narrow=0x7f030024;
-        public static final int notification_template_lines=0x7f030025;
-        public static final int notification_template_media=0x7f030026;
-        public static final int notification_template_part_chronometer=0x7f030027;
-        public static final int notification_template_part_time=0x7f030028;
-        public static final int select_dialog_item_material=0x7f030029;
-        public static final int select_dialog_multichoice_material=0x7f03002a;
-        public static final int select_dialog_singlechoice_material=0x7f03002b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03002c;
+        public static final int left_panel=0x7f030021;
+        public static final int notification_media_action=0x7f030022;
+        public static final int notification_media_cancel_action=0x7f030023;
+        public static final int notification_template_big_media=0x7f030024;
+        public static final int notification_template_big_media_narrow=0x7f030025;
+        public static final int notification_template_lines=0x7f030026;
+        public static final int notification_template_media=0x7f030027;
+        public static final int notification_template_part_chronometer=0x7f030028;
+        public static final int notification_template_part_time=0x7f030029;
+        public static final int select_dialog_item_material=0x7f03002a;
+        public static final int select_dialog_multichoice_material=0x7f03002b;
+        public static final int select_dialog_singlechoice_material=0x7f03002c;
+        public static final int slidingmenumain=0x7f03002d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03002e;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;
@@ -3576,6 +3878,84 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.task.taskApplication:textAllCaps
         */
         public static final int AppCompatTextView_textAllCaps = 1;
+        /** Attributes that can be used with a CircularImageView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CircularImageView_border com.task.taskApplication:border}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularImageView_border_color com.task.taskApplication:border_color}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularImageView_border_width com.task.taskApplication:border_width}</code></td><td></td></tr>
+           <tr><td><code>{@link #CircularImageView_shadow com.task.taskApplication:shadow}</code></td><td></td></tr>
+           </table>
+           @see #CircularImageView_border
+           @see #CircularImageView_border_color
+           @see #CircularImageView_border_width
+           @see #CircularImageView_shadow
+         */
+        public static final int[] CircularImageView = {
+            0x7f0100e0, 0x7f0100e1, 0x7f0100e2, 0x7f0100e3
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#border}
+          attribute's value can be found in the {@link #CircularImageView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:border
+        */
+        public static final int CircularImageView_border = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#border_color}
+          attribute's value can be found in the {@link #CircularImageView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:border_color
+        */
+        public static final int CircularImageView_border_color = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#border_width}
+          attribute's value can be found in the {@link #CircularImageView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:border_width
+        */
+        public static final int CircularImageView_border_width = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#shadow}
+          attribute's value can be found in the {@link #CircularImageView} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:shadow
+        */
+        public static final int CircularImageView_shadow = 3;
         /** Attributes that can be used with a CompoundButton.
            <p>Includes the following attributes:</p>
            <table>
@@ -4809,6 +5189,245 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.task.taskApplication:voiceIcon
         */
         public static final int SearchView_voiceIcon = 12;
+        /** Attributes that can be used with a SlidingMenu.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SlidingMenu_behindOffset com.task.taskApplication:behindOffset}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_behindScrollScale com.task.taskApplication:behindScrollScale}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_behindWidth com.task.taskApplication:behindWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_fadeDegree com.task.taskApplication:fadeDegree}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_fadeEnabled com.task.taskApplication:fadeEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_mode com.task.taskApplication:mode}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_selectorDrawable com.task.taskApplication:selectorDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_selectorEnabled com.task.taskApplication:selectorEnabled}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_shadowDrawable com.task.taskApplication:shadowDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_shadowWidth com.task.taskApplication:shadowWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_touchModeAbove com.task.taskApplication:touchModeAbove}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_touchModeBehind com.task.taskApplication:touchModeBehind}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_viewAbove com.task.taskApplication:viewAbove}</code></td><td></td></tr>
+           <tr><td><code>{@link #SlidingMenu_viewBehind com.task.taskApplication:viewBehind}</code></td><td></td></tr>
+           </table>
+           @see #SlidingMenu_behindOffset
+           @see #SlidingMenu_behindScrollScale
+           @see #SlidingMenu_behindWidth
+           @see #SlidingMenu_fadeDegree
+           @see #SlidingMenu_fadeEnabled
+           @see #SlidingMenu_mode
+           @see #SlidingMenu_selectorDrawable
+           @see #SlidingMenu_selectorEnabled
+           @see #SlidingMenu_shadowDrawable
+           @see #SlidingMenu_shadowWidth
+           @see #SlidingMenu_touchModeAbove
+           @see #SlidingMenu_touchModeBehind
+           @see #SlidingMenu_viewAbove
+           @see #SlidingMenu_viewBehind
+         */
+        public static final int[] SlidingMenu = {
+            0x7f0100e5, 0x7f0100e6, 0x7f0100e7, 0x7f0100e8,
+            0x7f0100e9, 0x7f0100ea, 0x7f0100eb, 0x7f0100ec,
+            0x7f0100ed, 0x7f0100ee, 0x7f0100ef, 0x7f0100f0,
+            0x7f0100f1, 0x7f0100f2
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#behindOffset}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:behindOffset
+        */
+        public static final int SlidingMenu_behindOffset = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#behindScrollScale}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:behindScrollScale
+        */
+        public static final int SlidingMenu_behindScrollScale = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#behindWidth}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:behindWidth
+        */
+        public static final int SlidingMenu_behindWidth = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#fadeDegree}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:fadeDegree
+        */
+        public static final int SlidingMenu_fadeDegree = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#fadeEnabled}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:fadeEnabled
+        */
+        public static final int SlidingMenu_fadeEnabled = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#mode}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>left</code></td><td>0</td><td></td></tr>
+<tr><td><code>right</code></td><td>1</td><td></td></tr>
+</table>
+          @attr name com.task.taskApplication:mode
+        */
+        public static final int SlidingMenu_mode = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#selectorDrawable}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.task.taskApplication:selectorDrawable
+        */
+        public static final int SlidingMenu_selectorDrawable = 13;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#selectorEnabled}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:selectorEnabled
+        */
+        public static final int SlidingMenu_selectorEnabled = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#shadowDrawable}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.task.taskApplication:shadowDrawable
+        */
+        public static final int SlidingMenu_shadowDrawable = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#shadowWidth}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:shadowWidth
+        */
+        public static final int SlidingMenu_shadowWidth = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#touchModeAbove}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>margin</code></td><td>0</td><td></td></tr>
+<tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
+<tr><td><code>none</code></td><td>2</td><td></td></tr>
+</table>
+          @attr name com.task.taskApplication:touchModeAbove
+        */
+        public static final int SlidingMenu_touchModeAbove = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#touchModeBehind}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>margin</code></td><td>0</td><td></td></tr>
+<tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
+<tr><td><code>none</code></td><td>2</td><td></td></tr>
+</table>
+          @attr name com.task.taskApplication:touchModeBehind
+        */
+        public static final int SlidingMenu_touchModeBehind = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#viewAbove}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.task.taskApplication:viewAbove
+        */
+        public static final int SlidingMenu_viewAbove = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#viewBehind}
+          attribute's value can be found in the {@link #SlidingMenu} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.task.taskApplication:viewBehind
+        */
+        public static final int SlidingMenu_viewBehind = 2;
         /** Attributes that can be used with a Spinner.
            <p>Includes the following attributes:</p>
            <table>
@@ -4867,6 +5486,327 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.task.taskApplication:popupTheme
         */
         public static final int Spinner_popupTheme = 3;
+        /** Attributes that can be used with a SwitchButton.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #SwitchButton_animationVelocity com.task.taskApplication:animationVelocity}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_insetBottom com.task.taskApplication:insetBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_insetLeft com.task.taskApplication:insetLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_insetRight com.task.taskApplication:insetRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_insetTop com.task.taskApplication:insetTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_measureFactor com.task.taskApplication:measureFactor}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_offColor com.task.taskApplication:offColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_offDrawable com.task.taskApplication:offDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_onColor com.task.taskApplication:onColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_onDrawable com.task.taskApplication:onDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_radius com.task.taskApplication:radius}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_thumbColor com.task.taskApplication:thumbColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_thumbDrawable com.task.taskApplication:thumbDrawable}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_thumbPressedColor com.task.taskApplication:thumbPressedColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_thumb_height com.task.taskApplication:thumb_height}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_thumb_margin com.task.taskApplication:thumb_margin}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_thumb_marginBottom com.task.taskApplication:thumb_marginBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_thumb_marginLeft com.task.taskApplication:thumb_marginLeft}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_thumb_marginRight com.task.taskApplication:thumb_marginRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_thumb_marginTop com.task.taskApplication:thumb_marginTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #SwitchButton_thumb_width com.task.taskApplication:thumb_width}</code></td><td></td></tr>
+           </table>
+           @see #SwitchButton_animationVelocity
+           @see #SwitchButton_insetBottom
+           @see #SwitchButton_insetLeft
+           @see #SwitchButton_insetRight
+           @see #SwitchButton_insetTop
+           @see #SwitchButton_measureFactor
+           @see #SwitchButton_offColor
+           @see #SwitchButton_offDrawable
+           @see #SwitchButton_onColor
+           @see #SwitchButton_onDrawable
+           @see #SwitchButton_radius
+           @see #SwitchButton_thumbColor
+           @see #SwitchButton_thumbDrawable
+           @see #SwitchButton_thumbPressedColor
+           @see #SwitchButton_thumb_height
+           @see #SwitchButton_thumb_margin
+           @see #SwitchButton_thumb_marginBottom
+           @see #SwitchButton_thumb_marginLeft
+           @see #SwitchButton_thumb_marginRight
+           @see #SwitchButton_thumb_marginTop
+           @see #SwitchButton_thumb_width
+         */
+        public static final int[] SwitchButton = {
+            0x7f0100cb, 0x7f0100cc, 0x7f0100cd, 0x7f0100ce,
+            0x7f0100cf, 0x7f0100d0, 0x7f0100d1, 0x7f0100d2,
+            0x7f0100d3, 0x7f0100d4, 0x7f0100d5, 0x7f0100d6,
+            0x7f0100d7, 0x7f0100d8, 0x7f0100d9, 0x7f0100da,
+            0x7f0100db, 0x7f0100dc, 0x7f0100dd, 0x7f0100de,
+            0x7f0100df
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#animationVelocity}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:animationVelocity
+        */
+        public static final int SwitchButton_animationVelocity = 14;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#insetBottom}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.task.taskApplication:insetBottom
+        */
+        public static final int SwitchButton_insetBottom = 20;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#insetLeft}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.task.taskApplication:insetLeft
+        */
+        public static final int SwitchButton_insetLeft = 17;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#insetRight}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.task.taskApplication:insetRight
+        */
+        public static final int SwitchButton_insetRight = 18;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#insetTop}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.task.taskApplication:insetTop
+        */
+        public static final int SwitchButton_insetTop = 19;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#measureFactor}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>Must be a floating point value, such as "<code>1.2</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:measureFactor
+        */
+        public static final int SwitchButton_measureFactor = 16;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#offColor}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.task.taskApplication:offColor
+        */
+        public static final int SwitchButton_offColor = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#offDrawable}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.task.taskApplication:offDrawable
+        */
+        public static final int SwitchButton_offDrawable = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#onColor}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.task.taskApplication:onColor
+        */
+        public static final int SwitchButton_onColor = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#onDrawable}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.task.taskApplication:onDrawable
+        */
+        public static final int SwitchButton_onDrawable = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#radius}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.task.taskApplication:radius
+        */
+        public static final int SwitchButton_radius = 15;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#thumbColor}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.task.taskApplication:thumbColor
+        */
+        public static final int SwitchButton_thumbColor = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#thumbDrawable}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.task.taskApplication:thumbDrawable
+        */
+        public static final int SwitchButton_thumbDrawable = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#thumbPressedColor}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+          @attr name com.task.taskApplication:thumbPressedColor
+        */
+        public static final int SwitchButton_thumbPressedColor = 13;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#thumb_height}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.task.taskApplication:thumb_height
+        */
+        public static final int SwitchButton_thumb_height = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#thumb_margin}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.task.taskApplication:thumb_margin
+        */
+        public static final int SwitchButton_thumb_margin = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#thumb_marginBottom}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.task.taskApplication:thumb_marginBottom
+        */
+        public static final int SwitchButton_thumb_marginBottom = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#thumb_marginLeft}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.task.taskApplication:thumb_marginLeft
+        */
+        public static final int SwitchButton_thumb_marginLeft = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#thumb_marginRight}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.task.taskApplication:thumb_marginRight
+        */
+        public static final int SwitchButton_thumb_marginRight = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#thumb_marginTop}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.task.taskApplication:thumb_marginTop
+        */
+        public static final int SwitchButton_thumb_marginTop = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#thumb_width}
+          attribute's value can be found in the {@link #SwitchButton} array.
+
+
+          <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+<p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+          @attr name com.task.taskApplication:thumb_width
+        */
+        public static final int SwitchButton_thumb_width = 8;
         /** Attributes that can be used with a SwitchCompat.
            <p>Includes the following attributes:</p>
            <table>
@@ -5155,6 +6095,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><td><code>{@link #Theme_buttonStyleSmall com.task.taskApplication:buttonStyleSmall}</code></td><td> Small Button style.</td></tr>
            <tr><td><code>{@link #Theme_checkboxStyle com.task.taskApplication:checkboxStyle}</code></td><td> Default Checkbox style.</td></tr>
            <tr><td><code>{@link #Theme_checkedTextViewStyle com.task.taskApplication:checkedTextViewStyle}</code></td><td> Default CheckedTextView style.</td></tr>
+           <tr><td><code>{@link #Theme_circularImageViewStyle com.task.taskApplication:circularImageViewStyle}</code></td><td></td></tr>
            <tr><td><code>{@link #Theme_colorAccent com.task.taskApplication:colorAccent}</code></td><td> Bright complement to the primary branding color.</td></tr>
            <tr><td><code>{@link #Theme_colorButtonNormal com.task.taskApplication:colorButtonNormal}</code></td><td> The color applied to framework buttons in their normal state.</td></tr>
            <tr><td><code>{@link #Theme_colorControlActivated com.task.taskApplication:colorControlActivated}</code></td><td> The color applied to framework controls in their activated (ex.</td></tr>
@@ -5275,6 +6216,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #Theme_buttonStyleSmall
            @see #Theme_checkboxStyle
            @see #Theme_checkedTextViewStyle
+           @see #Theme_circularImageViewStyle
            @see #Theme_colorAccent
            @see #Theme_colorButtonNormal
            @see #Theme_colorControlActivated
@@ -5363,7 +6305,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f01005d, 0x7f01005e, 0x7f01005f, 0x7f010060,
             0x7f010061, 0x7f010062, 0x7f010063, 0x7f010064,
             0x7f010065, 0x7f010066, 0x7f010067, 0x7f010068,
-            0x7f010069, 0x7f01006a, 0x7f01006b, 0x7f01006c
+            0x7f010069, 0x7f01006a, 0x7f01006b, 0x7f01006c,
+            0x7f0100e4
         };
         /**
           <p>
@@ -5946,6 +6889,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           @attr name com.task.taskApplication:checkedTextViewStyle
         */
         public static final int Theme_checkedTextViewStyle = 102;
+        /**
+          <p>This symbol is the offset where the {@link com.task.taskApplication.R.attr#circularImageViewStyle}
+          attribute's value can be found in the {@link #Theme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.task.taskApplication:circularImageViewStyle
+        */
+        public static final int Theme_circularImageViewStyle = 108;
         /**
           <p>
           @attr description

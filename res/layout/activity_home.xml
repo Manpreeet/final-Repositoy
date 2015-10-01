@@ -31,6 +31,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:contentDescription="@null"
+            android:onClick="openLeftPanel"
             android:padding="5dip"
             android:src="@drawable/ic_drawer" />
     </RelativeLayout>

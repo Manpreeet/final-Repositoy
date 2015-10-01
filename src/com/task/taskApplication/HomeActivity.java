@@ -62,6 +62,14 @@ public class HomeActivity extends ParentActivity {
 		swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
 		swipeRefresh.setColorSchemeColors(Color.RED, Color.BLUE, Color.CYAN,
 				Color.BLACK);
+		swipeRefresh.setRefreshing(false);
+		try {
+			getSideMenu(HomeActivity.this, "Home");
+
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+
 	}
 
 	/*
@@ -182,5 +190,9 @@ public class HomeActivity extends ParentActivity {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
+	}
+
+	public void openLeftPanel(View view) {
+		showMenu();
 	}
 }

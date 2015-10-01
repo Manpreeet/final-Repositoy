@@ -8,6 +8,5 @@
 	<classpathentry kind="lib" path="libs/android-logging-log4j-1.0.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/org.apache.commons.io.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/android-support-v4.jar"/>
-	<classpathentry exported="true" kind="lib" path="libs/volley.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
