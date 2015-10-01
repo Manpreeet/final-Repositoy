@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 
 import com.tarsem.control.ActivityController;
 import com.tarsem.utility.Utility;
+import com.task.taskApplication.EditProfileActivity;
 import com.task.taskApplication.HomeActivity;
 import com.task.taskApplication.LoginActivity;
 import com.task.taskApplication.ParentActivity;
@@ -34,19 +35,15 @@ public class SlideMenuControls extends ParentActivity {
 
 	{
 		parentActivity = this;
-		LayoutInflater inflater = LayoutInflater.from(ctx);
-		View view = inflater.inflate(R.layout.left_panel, null);
-		ctx.findViewById(R.id.signInView).setVisibility(View.VISIBLE);
-		ctx.findViewById(R.id.rel_share).setVisibility(View.GONE);
 
 		//
-		ctx.findViewById(R.id.rel_home).setOnClickListener(
+		ctx.findViewById(R.id.rel_home1).setOnClickListener(
 				new OnClickListener() {
 
 					@Override
 					public void onClick(View v) {
 
-						clickEvent(ctx, HomeActivity.class, "Home");
+						clickEvent(ctx, EditProfileActivity.class, "Home");
 						closeMEnu(ctx, activityName);
 
 					}
@@ -64,13 +61,8 @@ public class SlideMenuControls extends ParentActivity {
 
 	private void closeMEnu(Activity activity, String activityName) {
 		try {
-			/*
-			 * if (activityName.equals("Home")) {
-			 * 
-			 * ((HomeActivity) activity).close(); } else if
-			 * (activityName.equals("favoriteGas")) { ((FavoriteGasStation)
-			 * activity).close(); }
-			 */
+			((HomeActivity) activity).close();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

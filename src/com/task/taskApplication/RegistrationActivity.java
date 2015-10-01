@@ -13,6 +13,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 /**
  * @author Manpreet
@@ -23,6 +24,7 @@ public class RegistrationActivity extends ParentActivity {
 	Context context;
 	EditText firstName, lastName, emailAddress, password, confirmPassword,
 			contactNumber;
+	private ProgressBar loadingProgress;
 
 	/*
 	 * (non-Javadoc)
@@ -49,7 +51,7 @@ public class RegistrationActivity extends ParentActivity {
 		password = (EditText) findViewById(R.id.registrationPasswrod);
 		confirmPassword = (EditText) findViewById(R.id.registrationConfirmPassword);
 		contactNumber = (EditText) findViewById(R.id.registrationCompanyName);
-
+		loadingProgress = (ProgressBar) findViewById(R.id.loadingProgress);
 	}
 
 	/**
@@ -122,7 +124,7 @@ public class RegistrationActivity extends ParentActivity {
 			confirmPassword.requestFocus();
 		} else {
 			if (isConnectedToInternet()) {
-				showProgressBar();
+				loadingProgress.setVisibility(View.VISIBLE);
 				sendRegistrationRequestToServer();
 
 			}
@@ -136,26 +138,27 @@ public class RegistrationActivity extends ParentActivity {
 	private void sendRegistrationRequestToServer() {
 		new ServerAsyncTask(ApplicationConstant.appurl
 				+ ApplicationConstant.registrationRequestType + "&userid=62"
-				+ "&email=" + emailAddress.getText().toString().trim() + "&firstname="
-				+ firstName.getText().toString().trim() + "&lastname="
-				+ lastName.getText().toString().trim() + "&password="
-				+ password.getText().toString().trim() + "&roles=1" + "access=20",
-				context, new ResponseCallback() {
+				+ "&email=" + emailAddress.getText().toString().trim()
+				+ "&firstname=" + firstName.getText().toString().trim()
+				+ "&lastname=" + lastName.getText().toString().trim()
+				+ "&password=" + password.getText().toString().trim()
+				+ "&roles=1" + "access=20", context, new ResponseCallback() {
 
-					@Override
-					public void onSuccessRecieve(Object object) {
-						dismissProgressBar();
-						showToastMessage("Successfully register on app");
-						finish();
-					}
+			@Override
+			public void onSuccessRecieve(Object object) {
 
-					@Override
-					public void onErrorRecieve(Object object) {
-						dismissProgressBar();
+				loadingProgress.setVisibility(View.GONE);
+				showToastMessage("Successfully register on app");
+				finish();
+			}
 
-						showToastMessage((String) object);
-					}
-				}, ApplicationConstant.registrationRequestType).execute();
+			@Override
+			public void onErrorRecieve(Object object) {
+
+				loadingProgress.setVisibility(View.GONE);
+				showToastMessage((String) object);
+			}
+		}, ApplicationConstant.registrationRequestType).execute();
 
 	}
 }

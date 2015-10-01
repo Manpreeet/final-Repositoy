@@ -42,7 +42,7 @@ public class ParentActivity extends FragmentActivity implements
  */
 	public ParentActivity() {
 		masterActivity = this;
-}
+	}
 
 	@Override
 	protected void onDestroy() {
@@ -314,6 +314,10 @@ public class ParentActivity extends FragmentActivity implements
 	public void showMenu() {
 		mHelper.showMenu();
 
+	}
+
+	public void close() {
+		mHelper.showContent();
 	}
 
 	/*

@@ -194,5 +194,19 @@ public class HomeActivity extends ParentActivity {
 
 	public void openLeftPanel(View view) {
 		showMenu();
+
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.task.taskApplication.ParentActivity#close()
+	 */
+	@Override
+	public void close() {
+		super.close();
+
+		showContent();
+
 	}
 }

@@ -12,6 +12,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 
 /**
  * @author Manpreet
@@ -22,6 +23,7 @@ public class ForgetPasswordActivity extends ParentActivity {
 	ParentActivity parentActivity;
 	EditText forgetEmailAddress;
 	Context context;
+	private ProgressBar loadingProgress;
 
 	/*
 	 * (non-Javadoc)
@@ -43,6 +45,7 @@ public class ForgetPasswordActivity extends ParentActivity {
 		parentActivity = this;
 		context = this;
 		forgetEmailAddress = (EditText) findViewById(R.id.forgetEmailAddress);
+		loadingProgress = (ProgressBar) findViewById(R.id.loadingProgress);
 	}
 
 	/**
@@ -62,7 +65,7 @@ public class ForgetPasswordActivity extends ParentActivity {
 			forgetEmailAddress.requestFocus();
 		} else {
 			if (isConnectedToInternet()) {
-				showProgressBar();
+				loadingProgress.setVisibility(View.VISIBLE);
 				submitForgetRequestToServer();
 
 			} else {
@@ -83,14 +86,15 @@ public class ForgetPasswordActivity extends ParentActivity {
 
 					@Override
 					public void onSuccessRecieve(Object object) {
-						dismissProgressBar();
+
+						loadingProgress.setVisibility(View.GONE);
 						showToastMessage((String) object);
 						finish();
 					}
 
 					@Override
 					public void onErrorRecieve(Object object) {
-						dismissProgressBar();
+						loadingProgress.setVisibility(View.GONE);
 						showToastMessage((String) object);
 					}
 				}, ApplicationConstant.forgetRequestType).execute();
