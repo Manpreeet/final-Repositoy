@@ -32,7 +32,6 @@ public class ForgetPasswordActivity extends ParentActivity {
 	 */
 	@Override
 	protected void onCreate(Bundle arg0) {
-		// TODO Auto-generated method stub
 		super.onCreate(arg0);
 		setContentView(R.layout.activity_forget_password);
 		findAttributesId();
@@ -69,7 +68,9 @@ public class ForgetPasswordActivity extends ParentActivity {
 				submitForgetRequestToServer();
 
 			} else {
-				showToastMessage("no internet connection");
+				new Utility().showCustomDialog("Ok", "Internet Connection",
+						"no internet access", false,
+						ForgetPasswordActivity.this, null, null);
 			}
 		}
 	}

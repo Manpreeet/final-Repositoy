@@ -40,6 +40,7 @@
                 android:id="@+id/emailField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="3dip"
                 android:background="@null"
                 android:drawableLeft="@drawable/ic_action_email"
                 android:hint="@string/email_hint"
@@ -55,10 +56,12 @@
                 android:id="@+id/passwordField"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="6dip"
                 android:background="@null"
                 android:drawableLeft="@drawable/ic_action_secure"
                 android:hint="@string/password_hint"
                 android:inputType="textPassword" />
+
         </LinearLayout>
 
         <ImageView

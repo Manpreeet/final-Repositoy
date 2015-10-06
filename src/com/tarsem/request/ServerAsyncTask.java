@@ -76,7 +76,9 @@ public class ServerAsyncTask extends AsyncTask<Void, Void, Void> {
 		super.onPostExecute(result);
 
 		try {
-			if (response != null) {
+			if (response != null
+					&& !response
+							.equals("<response><error>Invalid function</error></response>")) {
 
 				if (!type.equals(ApplicationConstant.getTaskListRequest)) {
 
@@ -115,6 +117,8 @@ public class ServerAsyncTask extends AsyncTask<Void, Void, Void> {
 					 * responseCallback, parentActivity)
 					 */
 				}
+			} else {
+				responseCallback.onErrorRecieve("something went wrong");
 			}
 
 		} catch (Exception e) {

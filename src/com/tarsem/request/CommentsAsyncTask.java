@@ -33,11 +33,11 @@ public class CommentsAsyncTask extends AsyncTask<Void, Void, Void> {
 	Context context;
 
 	public CommentsAsyncTask(String url, Context context,
-			ResponseCallback responseCallback, String type) {
+			ResponseCallback responseCallback,String type) {
 		this.url = url;
 		this.context = context;
 		this.responseCallback = responseCallback;
-		this.type = type;
+
 	}
 
 	/*
@@ -76,7 +76,7 @@ public class CommentsAsyncTask extends AsyncTask<Void, Void, Void> {
 		super.onPostExecute(result);
 
 		try {
-			if (response != null&&!response.equals("")) {
+			if (response != null && !response.equals("")) {
 
 				new CommonParser()
 						.fetchUserComments(response, responseCallback);

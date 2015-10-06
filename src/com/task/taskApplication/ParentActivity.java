@@ -138,7 +138,7 @@ public class ParentActivity extends FragmentActivity implements
 	 * @Description = enable side menu
 	 */
 
-	public void getSideMenu(Activity a, String activityName) {
+	public void getSideMenu(Activity activityName) {
 		DisplayMetrics dsplymtrx = new DisplayMetrics();
 		this.getWindowManager().getDefaultDisplay().getMetrics(dsplymtrx);
 		int width = dsplymtrx.widthPixels / 3;
@@ -161,7 +161,7 @@ public class ParentActivity extends FragmentActivity implements
 		sm.setBehindWidth(2 * width);
 
 		sm.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-		new SlideMenuControls(a, activityName);
+		new SlideMenuControls(activityName);
 	}
 
 	@Override

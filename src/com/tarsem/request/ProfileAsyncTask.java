@@ -77,7 +77,12 @@ public class ProfileAsyncTask extends AsyncTask<Void, Void, Void> {
 			if (response != null && !response.equals("")) {
 				int successStatus = new JSONObject(response).getInt("success");
 				if (successStatus == 1) {
-					responseCallback.onSuccessRecieve(true);
+					new CommonParser().fetchUserInformation(response,
+							responseCallback);
+				} else {
+					responseCallback.onErrorRecieve(new JSONObject(response)
+							.get("warning"));
+
 				}
 			} else {
 				responseCallback

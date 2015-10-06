@@ -18,16 +18,20 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.IOUtils;
+import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -41,7 +45,17 @@ import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.tarsem.constant.Constant;
+import com.tarsem.control.ActivityController;
+import com.tarsem.responsecallback.ResponseCallback;
+import com.tarsem.responsecallback.SettingResponseCallback;
+import com.task.taskApplication.R;
 
 public class Utility {
 	// private static final Logger LOGGER = Logger.getLogger(Utility.class);
@@ -217,12 +231,15 @@ public class Utility {
 	 * @exception
 	 * @description
 	 */
-	@SuppressLint("SimpleDateFormat") public static String getDate() {
+	@SuppressLint("SimpleDateFormat")
+	public static String getDate() {
 		Calendar c = Calendar.getInstance();
 		System.out.println("Current time => " + c.getTime());
+		long date = System.currentTimeMillis();
 
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-mm-dd");
-		String formattedDate = df.format(c.getTime());
+		df.setTimeZone(TimeZone.getTimeZone("IST"));
+		String formattedDate = df.format(date);
 		/*
 		 * DateFormat dateFormat = new SimpleDateFormat("yy/MM/dd"); Calendar
 		 * cal = Calendar.getInstance(); formatDate = dateFormat.format(cal);
@@ -456,22 +473,82 @@ public class Utility {
 
 	/**
 	 * 
-	 * @user: dinakarm
-	 * @date Apr 25, 2014
-	 * @return float
-	 * @exception
-	 * @description
+	 * developer:Manpreet date:03-Oct-2015 return:void description: method for
+	 * save setting prefrence in sharedPrefrence
 	 */
-	public static float roundTwoDecimal(float value) {
-
-		float number = 0.0f;
+	public void saveSettings(String response,
+			SettingResponseCallback settingResponseCallback, Context context) {
+		SharedPreferences sharedPreferences = context.getSharedPreferences(
+				"settingPrefrence", 1);
 		try {
-			number = (float) (Math.round(value * 100.0) / 100.0);
+			JSONObject responseObject = new JSONObject(response);
+			String userAdmin = responseObject.getString("useradmin");
+			String roleAdmin = responseObject.getString("roleadmin");
+			String scheduleAdmin = responseObject.getString("scheduleadmin");
+			String taskAdmin = responseObject.getString("taskadmin");
+			SharedPreferences.Editor editor = sharedPreferences.edit();
+			if (userAdmin.equals("null")) {
+				editor.putBoolean("userAdmin", false);
+			} else {
+				editor.putBoolean("userAdmin", true);
+			}
+			if (roleAdmin.equals("null")) {
+				editor.putBoolean("roleAdmin", false);
+			} else {
+				editor.putBoolean("roleAdmin", true);
+
+			}
+			if (scheduleAdmin.equals("null")) {
+				editor.putBoolean("scheduleAdmin", false);
+			} else {
+				editor.putBoolean("scheduleAdmin", true);
+
+			}
+			if (taskAdmin.equals("null")) {
+				editor.putBoolean("taskAdmin", false);
+			} else {
+				editor.putBoolean("taskAdmin", true);
+
+			}
+			editor.commit();
+			settingResponseCallback.onSuccess(true);
 		} catch (Exception e) {
-			// LOGGER.error("Error occured inside the roundTwoDecimal"+e);
-			return value;
+			e.printStackTrace();
+
 		}
-		return number;
+
+	}
+
+	/**
+	 * 
+	 * developer:Manpreet date:03-Oct-2015 return:boolean description:
+	 */
+	public boolean getSheduleAdminStatus(Context context) {
+		SharedPreferences sharedPreferences = context.getSharedPreferences(
+				"settingPrefrence", 1);
+		return sharedPreferences.getBoolean("scheduleAdmin", false);
+
+	}
+
+	public boolean getTaskAdminStatus(Context context) {
+		SharedPreferences sharedPreferences = context.getSharedPreferences(
+				"settingPrefrence", 1);
+		return sharedPreferences.getBoolean("taskAdmin", false);
+
+	}
+
+	public boolean getRoleAdminStatus(Context context) {
+		SharedPreferences sharedPreferences = context.getSharedPreferences(
+				"settingPrefrence", 1);
+		return sharedPreferences.getBoolean("roleAdmin", false);
+
+	}
+
+	public boolean getUserAdminStatus(Context context) {
+		SharedPreferences sharedPreferences = context.getSharedPreferences(
+				"settingPrefrence", 1);
+		return sharedPreferences.getBoolean("userAdmin", false);
+
 	}
 
 	// Method to on the wifi
@@ -605,9 +682,47 @@ public class Utility {
 		return upToNCharacters;
 	}
 
-	public static String getExtractedPhoneNo2(String s) {
-		String upToNCharacters = s.substring(0, Math.min(s.length(), 11));
+	/**
+	 * 
+	 * developer:Manpreet date:03-Oct-2015 return:void description: method for
+	 * open dialog
+	 */
+	public void showCustomDialog(String submitBtnText, String title,
+			String description, boolean status, final Activity activity,
+			final Class class1, ResponseCallback responseCallback) {
+		final Dialog dialog = new Dialog(activity);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.custom_dialog);
+		TextView dialogTitle, dialogMessage;
+		Button submitButton, cancelButton;
+		dialog.show();
+		dialog.setCanceledOnTouchOutside(false);
+		dialogTitle = (TextView) dialog.findViewById(R.id.dialogTitle);
+		dialogMessage = (TextView) dialog.findViewById(R.id.userName);
+		submitButton = (Button) dialog.findViewById(R.id.deleteButton);
+		cancelButton = (Button) dialog.findViewById(R.id.cancelButton);
+		dialogTitle.setText(title);
+		dialogMessage.setText(description);
+		submitButton.setText(submitBtnText);
+		// dialogTitle.setText(title)
+		cancelButton.setOnClickListener(new OnClickListener() {
 
-		return upToNCharacters;
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+		submitButton.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				if (class1 != null) {
+					ActivityController.startActivityController(6, null,
+							activity, true);
+				}
+				dialog.dismiss();
+			}
+		});
+
 	}
 }

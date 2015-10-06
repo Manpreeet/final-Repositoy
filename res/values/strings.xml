@@ -4,8 +4,8 @@
     <string name="app_name">Taskism</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    
-    <!--color declaration  -->
+
+    <!-- color declaration -->
     <string name="app_background_color">#171717</string>
 
     <!-- Login activity content declaration -->
@@ -13,8 +13,21 @@
     <string name="password_hint">Password</string>
     <string name="forget_password">Forget Password</string>
     <string name="sign_up">New here? Sign up</string>
-    
-    
+
     <!-- Forget password activity content declaration -->
     <string name="back_to_login">Back to Login</string>
+
+    <!-- left panel text attributes declaration -->
+    <string name="my_schedule_task">My Scheduled Tasks</string>
+    <string name="all_tasks">All Tasks</string>
+    <string name="edit_tasks">Edit Tasks</string>
+    <string name="edit_schedule">Edit Schedule</string>
+    <string name="edit_role">Edit Role</string>
+    <string name="edit_user">Edit User</string>
+    <string name="view_schedule">View Schedule</string>
+    <string name="my_profile">My Profile</string>
+    <string name="tutorials">Tutorials</string>
+    <string name="sign_out">Sign Out</string>
+    <!-- left panel text attributes declaration end -->
+
 </resources>

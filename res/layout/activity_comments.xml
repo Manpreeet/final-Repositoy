@@ -11,14 +11,8 @@
         <RelativeLayout
             android:id="@+id/headerlayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@null" >
-
-            <include
-                android:id="@+id/includeLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                layout="@layout/header_layout" />
+            android:layout_height="42dip"
+            android:background="@drawable/topbar" >
 
             <TextView
                 android:id="@+id/commentsTitle"
@@ -30,14 +24,15 @@
                 android:textColor="@android:color/white" />
 
             <ImageView
-                android:id="@+id/navigationImage"
+                android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:contentDescription="@null"
-                android:padding="5dip"
-                android:src="@drawable/ic_drawer" />
+                android:onClick="onClickBack"
+                android:padding="10dip"
+                android:src="@drawable/back" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -100,7 +95,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dip"
             android:scrollbars="none" >
-
         </ListView>
     </LinearLayout>
 
@@ -119,7 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="no comments found"
-        android:visibility="gone"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black"
+        android:visibility="gone" />
 
 </RelativeLayout>

@@ -5,23 +5,28 @@ package com.tarsem.leftpanel.control;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageInstaller.Session;
-import android.os.Bundle;
-import android.provider.SyncStateContract.Constants;
-import android.view.LayoutInflater;
+import android.content.SharedPreferences;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.tarsem.control.ActivityController;
+import com.tarsem.constant.Constant;
 import com.tarsem.utility.Utility;
-import com.task.taskApplication.EditProfileActivity;
-import com.task.taskApplication.HomeActivity;
+import com.task.taskApplication.EditRoleActivity;
+import com.task.taskApplication.EditScheduleActivity;
+import com.task.taskApplication.EditTaskActivity;
+import com.task.taskApplication.MyScheduleTaskActivity;
+import com.task.taskApplication.TutorialActivity;
+import com.task.taskApplication.UserListActivity;
+import com.task.taskApplication.UsersScheduleTaskActivity;
 import com.task.taskApplication.LoginActivity;
+import com.task.taskApplication.MyProfileActivity;
 import com.task.taskApplication.ParentActivity;
 import com.task.taskApplication.R;
+import com.task.taskApplication.ViewScheduleActivity;
 
 /**
  * @author vishalj
@@ -31,24 +36,152 @@ public class SlideMenuControls extends ParentActivity {
 	long customerId = 0;
 	ParentActivity parentActivity;
 
-	public SlideMenuControls(final Activity ctx, final String activityName)
+	public SlideMenuControls(final Activity ctx)
 
 	{
 		parentActivity = this;
 
 		//
-		ctx.findViewById(R.id.rel_home1).setOnClickListener(
+		ctx.findViewById(R.id.myProfileParent).setOnClickListener(
 				new OnClickListener() {
 
 					@Override
 					public void onClick(View v) {
 
-						clickEvent(ctx, EditProfileActivity.class, "Home");
-						closeMEnu(ctx, activityName);
+						clickEvent(ctx, MyProfileActivity.class);
+						closeMEnu(ctx);
 
 					}
 				});
 
+		ctx.findViewById(R.id.editUserParent).setOnClickListener(
+				new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						if (new Utility().getUserAdminStatus(ctx)) {
+
+							clickEvent(ctx, UserListActivity.class);
+							closeMEnu(ctx);
+						} else {
+							Toast.makeText(ctx, "you dont have permission",
+									Toast.LENGTH_LONG).show();
+							// showToastMessage("you dont have permission");
+						}
+
+					}
+				});
+
+		ctx.findViewById(R.id.roleParent).setOnClickListener(
+				new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						if (new Utility().getRoleAdminStatus(ctx)) {
+
+							clickEvent(ctx, EditRoleActivity.class);
+							closeMEnu(ctx);
+						} else {
+							Toast.makeText(ctx, "you dont have permission",
+									Toast.LENGTH_LONG).show();
+							// showToastMessage("you dont have permission");
+						}
+
+					}
+				});
+		ctx.findViewById(R.id.editTaskParent).setOnClickListener(
+				new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						if (new Utility().getTaskAdminStatus(ctx)) {
+
+							clickEvent(ctx, EditTaskActivity.class);
+							closeMEnu(ctx);
+						} else {
+							Toast.makeText(ctx, "you dont have permission",
+									Toast.LENGTH_LONG).show();
+							// showToastMessage("you dont have permission");
+						}
+
+					}
+				});
+		ctx.findViewById(R.id.editScheduleParent).setOnClickListener(
+				new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						if (new Utility().getSheduleAdminStatus(ctx)) {
+
+							clickEvent(ctx, EditScheduleActivity.class);
+							closeMEnu(ctx);
+						} else {
+							Toast.makeText(ctx, "you dont have permission",
+									Toast.LENGTH_LONG).show();
+							// showToastMessage("you dont have permission");
+						}
+
+					}
+				});
+
+		ctx.findViewById(R.id.allTaskParent).setOnClickListener(
+				new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						clickEvent(ctx, UsersScheduleTaskActivity.class);
+						closeMEnu(ctx);
+
+					}
+				});
+		ctx.findViewById(R.id.myScheduleTaskParent).setOnClickListener(
+				new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						clickEvent(ctx, MyScheduleTaskActivity.class);
+						closeMEnu(ctx);
+
+					}
+				});
+		ctx.findViewById(R.id.viewScheduleParent).setOnClickListener(
+				new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						clickEvent(ctx, ViewScheduleActivity.class);
+						closeMEnu(ctx);
+
+					}
+				});
+		ctx.findViewById(R.id.tutorialParent).setOnClickListener(
+				new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						clickEvent(ctx, TutorialActivity.class);
+						closeMEnu(ctx);
+
+					}
+				});
+		String userName = ((TextView) ctx.findViewById(R.id.signOutText))
+				.getText().toString();
+		((TextView) ctx.findViewById(R.id.signOutText)).setText(userName + " ("
+				+ Constant.getLoggedUserName(ctx) + ")");
+		ctx.findViewById(R.id.signOutParent).setOnClickListener(
+				new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						logoutUser(ctx);
+						closeMEnu(ctx);
+
+					}
+				});
 	}
 
 	/**
@@ -59,9 +192,9 @@ public class SlideMenuControls extends ParentActivity {
 	 * @Description = close side nevigation menu
 	 */
 
-	private void closeMEnu(Activity activity, String activityName) {
+	private void closeMEnu(Activity activity) {
 		try {
-			((HomeActivity) activity).close();
+			((UsersScheduleTaskActivity) activity).close();
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -74,8 +207,8 @@ public class SlideMenuControls extends ParentActivity {
 	 * developer:Manpreet date:29-Sep-2015 return:void description: method for
 	 * open left panel dialog
 	 */
-	private void clickEvent(Activity context, Class class1, String activityName) {
-		closeMEnu(context, activityName);
+	private void clickEvent(Activity context, Class class1) {
+		closeMEnu(context);
 		Intent i = new Intent(context.getApplicationContext(), class1);
 		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -85,4 +218,28 @@ public class SlideMenuControls extends ParentActivity {
 		context.finish();
 	}
 
+	/**
+	 * 
+	 * developer:Manpreet date:03-Oct-2015 return:void description: method for
+	 * logout user from app
+	 */
+	private void logoutUser(Activity activity) {
+
+		SharedPreferences sharedPreferences = activity.getSharedPreferences(
+				Constant.userInfo, 1);
+		SharedPreferences.Editor editor = sharedPreferences.edit();
+		editor.clear();
+		editor.commit();
+		new Utility().showCustomDialog("Ok", "Logout",
+				"Are you sure you want to exit from taskism ?", true, activity,
+				LoginActivity.class, null);
+		/*
+		 * Intent i = new Intent(activity.getApplicationContext(),
+		 * LoginActivity.class); i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		 * i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); activity.startActivity(i);
+		 * 
+		 * activity.overridePendingTransition(R.anim.slide_in,
+		 * R.anim.slide_out); activity.finish();
+		 */
+	}
 }

@@ -5,8 +5,10 @@ package com.tarsem.control;
 
 import com.tarsem.constant.Constant;
 import com.task.taskApplication.CommentActivity;
+import com.task.taskApplication.EditUserActivity;
 import com.task.taskApplication.ForgetPasswordActivity;
-import com.task.taskApplication.HomeActivity;
+import com.task.taskApplication.LoginActivity;
+import com.task.taskApplication.UsersScheduleTaskActivity;
 import com.task.taskApplication.R;
 import com.task.taskApplication.RegistrationActivity;
 
@@ -62,7 +64,7 @@ public class ActivityController {
 			}
 			break;
 		case 3:
-			intent = new Intent(activity, HomeActivity.class);
+			intent = new Intent(activity, UsersScheduleTaskActivity.class);
 			if (bundle != null) {
 				intent.putExtra(String.valueOf(Constant.homeActivity), bundle);
 
@@ -89,7 +91,35 @@ public class ActivityController {
 				activity.finish();
 			}
 			break;
+		case 5:
+			intent = new Intent(activity, EditUserActivity.class);
+			if (bundle != null) {
+				intent.putExtra(String.valueOf(Constant.homeActivity), bundle);
 
+			}
+			activity.startActivity(intent);
+			activity.overridePendingTransition(R.anim.slide_in,
+					R.anim.slide_out);
+
+			if (flag) {
+				activity.finish();
+			}
+			break;
+		
+		case 6:
+			intent = new Intent(activity, LoginActivity.class);
+			if (bundle != null) {
+				intent.putExtra(String.valueOf(Constant.homeActivity), bundle);
+
+			}
+			activity.startActivity(intent);
+			activity.overridePendingTransition(R.anim.slide_in,
+					R.anim.slide_out);
+
+			if (flag) {
+				activity.finish();
+			}
+			break;
 		default:
 			break;
 		}

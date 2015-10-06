@@ -127,6 +127,11 @@ public class RegistrationActivity extends ParentActivity {
 				loadingProgress.setVisibility(View.VISIBLE);
 				sendRegistrationRequestToServer();
 
+			} else {
+				new Utility().showCustomDialog("Ok", "Internet Connection",
+						"no internet access", false, RegistrationActivity.this,
+						null, null);
+
 			}
 		}
 	}

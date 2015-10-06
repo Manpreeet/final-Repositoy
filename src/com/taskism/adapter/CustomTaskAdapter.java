@@ -23,7 +23,7 @@ import com.tarsem.bean.TaskListBean;
 import com.tarsem.constant.Constant;
 import com.tarsem.control.ActivityController;
 import com.task.taskApplication.CommentActivity;
-import com.task.taskApplication.HomeActivity;
+import com.task.taskApplication.UsersScheduleTaskActivity;
 import com.task.taskApplication.R;
 
 /**
@@ -33,13 +33,13 @@ import com.task.taskApplication.R;
 public class CustomTaskAdapter extends BaseAdapter {
 	Context context;
 	List<TaskListBean> taskList;
-	HomeActivity homeActivity;
+	UsersScheduleTaskActivity homeActivity;
 
 	/**
 	 * 
 	 */
 	public CustomTaskAdapter(Context context, List<TaskListBean> taskList,
-			HomeActivity homeActivity) {
+			UsersScheduleTaskActivity homeActivity) {
 		this.taskList = taskList;
 		this.context = context;
 		this.homeActivity = homeActivity;

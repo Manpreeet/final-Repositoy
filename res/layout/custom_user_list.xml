@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dip" >
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/editUserParent"
+            android:paddingLeft="10dip"
+            android:text=""
+            android:textColor="@android:color/black"
+            android:textSize="14sp" >
+        </TextView>
+
+        <LinearLayout
+            android:id="@+id/editUserParent"
+            android:layout_width="wrap_content"
+            android:layout_height="55dip"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/editUserParent"
+            android:background="@android:color/black"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/editUserImage"
+                android:layout_width="28dip"
+                android:layout_height="26dip"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_action_edit" />
+
+            <ImageView
+                android:id="@+id/deleteUserImage"
+                android:layout_width="28dip"
+                android:layout_height="26dip"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_action_cancel" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/parentView"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/editUserParent"
+            android:background="#e2e2e2" >
+        </View>
+    </RelativeLayout>
+
+</LinearLayout>

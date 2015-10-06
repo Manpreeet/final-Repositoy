@@ -14,6 +14,11 @@ public class ApplicationConstant {
 	public static String loginrequestType = "login";
 	public static String registrationRequestType = "usernew";
 	public static String getTaskListRequest = "allusertasks";
+	public static String getMyScheduleListRequest = "myscheduledtasks";
+	public static String getUserListRequest = "userlist";
+	public static String deleteUserRequest = "userdelete";
+	public static String allUserScheduleTask ="scheduledusertasks";
+
 	public static String editProfileRequestType = "getprofileinfo";
 	public static final String forgetRequestType = "forgotpassword";
 

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dip"
+        android:background="@android:color/black"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="120dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:padding="5dip"
+            android:text="Name"
+            android:textColor="@android:color/white" />
+
+        <View
+            android:layout_width="1dip"
+            android:layout_height="42dip"
+            android:layout_marginLeft="5dip"
+            android:background="#e2e2e2" />
+
+        <TextView
+            android:id="@+id/sundaySchedule"
+            android:layout_width="120dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Sun 09/06/2015"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/mondaySchedule"
+            android:layout_width="120dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Mon 10/06/2015"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tuesdaySchedule"
+            android:layout_width="120dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Tue 10/06/2015"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/wednesdaySchedule"
+            android:layout_width="120dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Wed 10/06/2015"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/thrusdaySchedule"
+            android:layout_width="120dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Thu 10/06/2015"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/fridaySchedule"
+            android:layout_width="120dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="Fri 10/06/2015"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/saturdaySchedule"
+            android:layout_width="120dip"
+            android:layout_height="wrap_content"
+            android:text="Sat 10/06/2015"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</LinearLayout>

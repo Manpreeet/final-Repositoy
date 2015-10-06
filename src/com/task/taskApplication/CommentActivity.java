@@ -18,6 +18,8 @@ import com.tarsem.bean.CommentsBean;
 import com.tarsem.constant.ApplicationConstant;
 import com.tarsem.constant.Constant;
 import com.tarsem.request.CommentsAsyncTask;
+import com.tarsem.request.SendCommentAsyncTask;
+import com.tarsem.responsecallback.CommentsCallback;
 import com.tarsem.responsecallback.ResponseCallback;
 import com.tarsem.utility.Utility;
 import com.taskism.adapter.CommentsAdapter;
@@ -92,8 +94,13 @@ public class CommentActivity extends ParentActivity {
 		// http://taskism.com/webservice001/?action=commentday&date=2015-08-18&scheduleid=6181&taskid=222&userid=14
 
 		new CommentsAsyncTask(
-				"http://taskism.com/webservice001/?action=commentday&date=2015-08-18&scheduleid=6181&taskid=222&userid=14",
-				context, new ResponseCallback() {
+				"http://taskism.com/webservice001/?action=commentday&date=2015-09-04&scheduleid="
+						+ scheduleId2
+						+ "&taskid="
+						+ taskId2
+						+ "&userid="
+						+ Constant.getLoggedUserId(context), context,
+				new ResponseCallback() {
 
 					@SuppressWarnings("unchecked")
 					@Override
@@ -123,6 +130,73 @@ public class CommentActivity extends ParentActivity {
 	 * onCLick save button
 	 */
 	public void onClickSave(View view) {
+		if (commentInput.getText().toString().length() != 0) {
+
+			Utility.hideKeyBoard(CommentActivity.this);
+			if (isConnectedToInternet()) {
+				// commentInput.setText("");
+
+				loadingBar.setVisibility(View.VISIBLE);
+				postComment(commentInput.getText().toString());
+			} else {
+				new Utility().showCustomDialog("Ok", "Internet Connection",
+						"no internet access", false, CommentActivity.this,
+						null, null);
+
+			}
+
+		} else {
+			new Utility().showCustomDialog("Ok", "Comment",
+					"Enter comment first", false, CommentActivity.this, null,
+					null);
+		}
+	}
+
+	/**
+	 * developer:Manpreet date:04-Oct-2015 return:void description: method for
+	 * post comment on server
+	 */
+	private void postComment(String string) {
+		new SendCommentAsyncTask(
+				"http://taskism.com/webservice001/?action=commentcreate&date=2015-09-04"
+						+ "&scheduleid=" + scheduleId + "&taskid=" + taskId
+						+ "&userid=" + Constant.getLoggedUserId(context)
+						+ "&comment="
+						+ commentInput.getText().toString().trim(), context,
+				new CommentsCallback() {
+
+					@Override
+					public void onSuccessRecieve(Object object) {
+						commentInput.setText("");
+						getUserComments(taskId, scheduleId);
+
+					}
+
+					@Override
+					public void onErrorRecieve(Object object) {
+						commentInput.setText("");
+						loadingBar.setVisibility(View.GONE);
+						new Utility().showCustomDialog("Ok", "Error",
+								(String) object, false, CommentActivity.this,
+								null, null);
+					}
+				}, null).execute();
+	}
+
+	public void onClickBack(View view) {
+		finish();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.support.v4.app.FragmentActivity#onBackPressed()
+	 */
+	@Override
+	public void onBackPressed() {
+		super.onBackPressed();
+		finish();
 
 	}
+
 }
