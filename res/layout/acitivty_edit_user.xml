@@ -17,11 +17,13 @@
                 android:id="@+id/imageView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:onClick="onClickBack"
                 android:padding="5dip"
-                android:src="@drawable/header_logo" />
+                android:src="@drawable/back" />
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/titleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -252,112 +254,15 @@
                     </EditText>
                 </RelativeLayout>
 
-                <RelativeLayout
+                <LinearLayout
+                    android:id="@+id/roleParent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dip"
                     android:layout_marginRight="10dip"
+                    android:orientation="vertical"
                     android:padding="5dip" >
-
-                    <TextView
-                        android:id="@+id/roleText"
-                        android:layout_width="90dip"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginTop="5dip"
-                        android:text="role" />
-
-                    <CheckBox
-                        android:id="@+id/barCheckStaus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_toRightOf="@+id/roleText"
-                        android:text="Bar Black"
-                        android:textColor="@android:color/black" >
-                    </CheckBox>
-
-                    <CheckBox
-                        android:id="@+id/barTenderCheckStatus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/barCheckStaus"
-                        android:layout_toRightOf="@+id/roleText"
-                        android:text="Bartender"
-                        android:textColor="@android:color/black" >
-                    </CheckBox>
-
-                    <CheckBox
-                        android:id="@+id/bottleServiceCheckStatus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/barTenderCheckStatus"
-                        android:layout_toRightOf="@+id/roleText"
-                        android:text="Bottle Service"
-                        android:textColor="@android:color/black" >
-                    </CheckBox>
-
-                    <CheckBox
-                        android:id="@+id/cleaningCheckStatus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/bottleServiceCheckStatus"
-                        android:layout_toRightOf="@+id/roleText"
-                        android:text="Cleaning"
-                        android:textColor="@android:color/black" >
-                    </CheckBox>
-
-                    <CheckBox
-                        android:id="@+id/coatCheckStatus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/cleaningCheckStatus"
-                        android:layout_toRightOf="@+id/roleText"
-                        android:text="Coat Check"
-                        android:textColor="@android:color/black" >
-                    </CheckBox>
-
-                    <CheckBox
-                        android:id="@+id/doorStaffCheckStatus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/coatCheckStatus"
-                        android:layout_toRightOf="@+id/roleText"
-                        android:text="Door Staff"
-                        android:textColor="@android:color/black" >
-                    </CheckBox>
-
-                    <CheckBox
-                        android:id="@+id/managerCheckStatus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/doorStaffCheckStatus"
-                        android:layout_toRightOf="@+id/roleText"
-                        android:text="Manager"
-                        android:textColor="@android:color/black" >
-                    </CheckBox>
-
-                    <CheckBox
-                        android:id="@+id/marketingCheckStatus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/managerCheckStatus"
-                        android:layout_toRightOf="@+id/roleText"
-                        android:text="Marketing"
-                        android:textColor="@android:color/black" >
-                    </CheckBox>
-
-                    <CheckBox
-                        android:id="@+id/tableServiceCheckStatus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/marketingCheckStatus"
-                        android:layout_toRightOf="@+id/roleText"
-                        android:text="Table Service"
-                        android:textColor="@android:color/black" >
-                    </CheckBox>
-                </RelativeLayout>
+                </LinearLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -433,6 +338,7 @@
                     android:layout_marginRight="10dip"
                     android:layout_marginTop="20dip"
                     android:background="#70b500"
+                    android:onClick="onClickSave"
                     android:text="Save"
                     android:textColor="@android:color/white" >
                 </Button>

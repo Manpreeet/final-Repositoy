@@ -62,23 +62,22 @@ public class RegistrationActivity extends ParentActivity {
 		checkRegistationValidation();
 	}
 
-	/**
-	 * 
-	 * developer:Manpreet date:27-Sep-2015 return:void description:
-	 */
 	public void onClickBack(View view) {
 		finish();
+		overridePendingTransition(R.anim.slide_back_in, R.anim.slide_back_out);
+
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see android.app.Activity#onBackPressed()
+	 * @see android.support.v4.app.FragmentActivity#onBackPressed()
 	 */
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
 		finish();
+		overridePendingTransition(R.anim.slide_back_in, R.anim.slide_back_out);
 
 	}
 

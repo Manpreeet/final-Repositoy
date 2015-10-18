@@ -7,7 +7,6 @@ import java.util.List;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,27 +19,28 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tarsem.bean.TaskListBean;
+import com.tarsem.bean.UserBean;
 import com.tarsem.constant.Constant;
 import com.tarsem.control.ActivityController;
 import com.task.taskApplication.CommentActivity;
-import com.task.taskApplication.UserScheduleDescriptionActivity;
-import com.task.taskApplication.UsersScheduleTaskActivity;
+import com.task.taskApplication.EditTaskActivity;
 import com.task.taskApplication.R;
+import com.task.taskApplication.UserScheduleDescriptionActivity;
 
 /**
  * @author Manpreet
  * 
  */
-public class CustomTaskAdapter extends BaseAdapter {
+public class CustomEditTaskAdapter extends BaseAdapter {
 	Context context;
 	List<TaskListBean> taskList;
-	UsersScheduleTaskActivity homeActivity;
+	EditTaskActivity homeActivity;
 
 	/**
 	 * 
 	 */
-	public CustomTaskAdapter(Context context, List<TaskListBean> taskList,
-			UsersScheduleTaskActivity homeActivity) {
+	public CustomEditTaskAdapter(Context context, List<TaskListBean> taskList,
+			EditTaskActivity homeActivity) {
 		this.taskList = taskList;
 		this.context = context;
 		this.homeActivity = homeActivity;
@@ -90,23 +90,45 @@ public class CustomTaskAdapter extends BaseAdapter {
 		LayoutInflater layoutInflater = LayoutInflater.from(context);
 		ViewHolder viewHolder = null;
 		if (convertView == null) {
-			convertView = layoutInflater.inflate(R.layout.custom_user_task,
+			convertView = layoutInflater.inflate(R.layout.custom_user_list,
 					null);
 			viewHolder = new ViewHolder();
-			viewHolder.checkStatus = (CheckBox) convertView
-					.findViewById(R.id.checkStatus);
-			viewHolder.taskName = (TextView) convertView
-					.findViewById(R.id.taskName);
-			viewHolder.commentCount = (TextView) convertView
-					.findViewById(R.id.commentCount);
-			viewHolder.commentImage = (ImageView) convertView
-					.findViewById(R.id.commentImage);
+			viewHolder.userName = (TextView) convertView
+					.findViewById(R.id.userName);
+			viewHolder.deleteUser = (ImageView) convertView
+					.findViewById(R.id.deleteUserImage);
+			viewHolder.editUser = (ImageView) convertView
+					.findViewById(R.id.editUserImage);
 
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
-		viewHolder.commentImage.setTag(position);
+		final TaskListBean taskListBean = taskList.get(position);
+		final String taskName = taskListBean.taskName;
+		final int taskId = Integer.parseInt(taskListBean.taskId);
+		viewHolder.userName.setText(taskName);
+		viewHolder.deleteUser.setTag(position);
+		viewHolder.deleteUser.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				int pos = (Integer) v.getTag();
+				/*UserBean userBean = userBeansList.get(pos);
+				editUserActivity.showDeleteConfirmationPopup(userBean.userId,
+						userBean.userName, pos);*/
+			}
+		});
+		viewHolder.editUser.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+		/*		ActivityController.startActivityController(
+						Constant.EditUserActivity, null, editUserActivity,
+						false);
+		*/	}
+		});
+		/*viewHolder.commentImage.setTag(position);
 		viewHolder.commentImage.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -125,14 +147,14 @@ public class CustomTaskAdapter extends BaseAdapter {
 				homeActivity.overridePendingTransition(R.anim.slide_in,
 						R.anim.slide_out);
 
-				/*
+				
 				 * Bundle bundle = new Bundle(); bundle.putInt(Constant.taskId,
 				 * Integer.parseInt(taskId)); bundle.putInt(Constant.scheduleId,
 				 * Integer.parseInt(scheduleId));
 				 * bundle.putString(Constant.taskName, taskName);
 				 * ActivityController.startActivityController(
 				 * Constant.commentsActivity, bundle, homeActivity, false);
-				 */
+				 
 			}
 		});
 		final TaskListBean taskListBean = taskList.get(position);
@@ -185,15 +207,13 @@ public class CustomTaskAdapter extends BaseAdapter {
 
 						homeActivity.markTaskItem(taskListBean);
 					}
-				});
+				});*/
 
 		return convertView;
 	}
 
 	class ViewHolder {
-		CheckBox checkStatus;
-		TextView taskName;
-		TextView commentCount;
-		ImageView commentImage;
+		ImageView editUser, deleteUser;
+		TextView userName;
 	}
 }

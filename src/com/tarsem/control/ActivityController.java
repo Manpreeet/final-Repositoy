@@ -4,6 +4,7 @@
 package com.tarsem.control;
 
 import com.tarsem.constant.Constant;
+import com.task.taskApplication.AddNewUserActivity;
 import com.task.taskApplication.CommentActivity;
 import com.task.taskApplication.EditUserActivity;
 import com.task.taskApplication.ForgetPasswordActivity;
@@ -105,9 +106,23 @@ public class ActivityController {
 				activity.finish();
 			}
 			break;
-		
+
 		case 6:
 			intent = new Intent(activity, LoginActivity.class);
+			if (bundle != null) {
+				intent.putExtra(String.valueOf(Constant.homeActivity), bundle);
+
+			}
+			activity.startActivity(intent);
+			activity.overridePendingTransition(R.anim.slide_in,
+					R.anim.slide_out);
+
+			if (flag) {
+				activity.finish();
+			}
+			break;
+		case 7:
+			intent = new Intent(activity, AddNewUserActivity.class);
 			if (bundle != null) {
 				intent.putExtra(String.valueOf(Constant.homeActivity), bundle);
 

@@ -8,6 +8,7 @@ import java.util.List;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -185,6 +186,8 @@ public class CommentActivity extends ParentActivity {
 
 	public void onClickBack(View view) {
 		finish();
+		overridePendingTransition(R.anim.slide_back_in, R.anim.slide_back_out);
+
 	}
 
 	/*
@@ -196,6 +199,7 @@ public class CommentActivity extends ParentActivity {
 	public void onBackPressed() {
 		super.onBackPressed();
 		finish();
+		overridePendingTransition(R.anim.slide_back_in, R.anim.slide_back_out);
 
 	}
 

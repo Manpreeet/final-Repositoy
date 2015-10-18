@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/commentsHeaderView"
+        android:layout_width="match_parent"
+        android:layout_height="8dip"
+        android:background="#e2e2e2" />
+
+    <TextView
+        android:id="@+id/commentsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="5dip"
+        android:text="Comments"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/commentsTitleFooter"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#e2e2e2" />
+
+    <TextView
+        android:id="@+id/commentMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        android:paddingTop="5dip"
+        android:text="Light not coming on when the switch is flipped"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dip"
+        android:paddingLeft="5dip"
+        android:text="(Gairy Jacques 9/3/2015)"
+        android:textColor="@android:color/black"
+        android:textSize="10sp" />
+
+    <View
+        android:id="@+id/commentMessageFooter"
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#e2e2e2" />
+
+</LinearLayout>

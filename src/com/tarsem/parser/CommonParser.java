@@ -11,7 +11,11 @@ import org.json.JSONObject;
 
 import android.content.Context;
 
+import com.tarsem.bean.AccessBean;
 import com.tarsem.bean.CommentsBean;
+import com.tarsem.bean.EditOtherUserProfileBean;
+import com.tarsem.bean.RoleBean;
+import com.tarsem.bean.ScheduleDescriptionBean;
 import com.tarsem.bean.TaskListBean;
 import com.tarsem.bean.UserBean;
 import com.tarsem.bean.UserProfileBean;
@@ -141,6 +145,47 @@ public class CommonParser {
 
 	/**
 	 * 
+	 * developer:Manpreet date:27-Sep-2015 return:void description: method for
+	 * parse comments from server
+	 */
+	public void fetchScheduleDesciption(String response,
+			ResponseCallback responseCallback) {
+		try {
+			List<ScheduleDescriptionBean> commentList = null;
+			responseObject = new JSONObject(response);
+			responseArray = responseObject.getJSONArray("tasksteps");
+			if (responseArray.length() != 0) {
+				commentList = new ArrayList<>();
+				ScheduleDescriptionBean scheduleDescriptionBean = null;
+				for (int i = 0; i < responseArray.length(); i++) {
+					scheduleDescriptionBean = new ScheduleDescriptionBean();
+					scheduleDescriptionBean.taskStepId = responseArray
+							.getJSONObject(i).getString("taskstepid");
+					scheduleDescriptionBean.taskStepDescription = responseArray
+							.getJSONObject(i).getString("description");
+					scheduleDescriptionBean.taskStepImage = responseArray
+							.getJSONObject(i).getString("image");
+					scheduleDescriptionBean.taskStepName = responseArray
+							.getJSONObject(i).getString("taskname");
+					scheduleDescriptionBean.taskStepSequence = responseArray
+							.getJSONObject(i).getString("seq");
+
+					commentList.add(scheduleDescriptionBean);
+				}
+				responseCallback.onSuccessRecieve(commentList);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			responseArray = null;
+			responseObject = null;
+			System.gc();
+		}
+
+	}
+
+	/**
+	 * 
 	 * developer:Manpreet date:02-Oct-2015 return:void description: method for
 	 * parse user list response
 	 */
@@ -209,6 +254,123 @@ public class CommonParser {
 		} finally {
 			responseObject = null;
 			System.gc();
+		}
+	}
+
+	/**
+	 * 
+	 * developer:Manpreet date:17-Oct-2015 return:void description: method for
+	 * fetch other user information
+	 */
+	public void fetchOtherUserInformation(String response,
+			ResponseCallback responseCallback) {
+		try {
+			responseObject = new JSONObject(response);
+			EditOtherUserProfileBean editOtherUserProfileBean = null;
+			if (responseObject != null) {
+				editOtherUserProfileBean = new EditOtherUserProfileBean();
+				editOtherUserProfileBean.userId = responseObject
+						.getString("userid");
+				editOtherUserProfileBean.firstName = responseObject
+						.getString("firstname");
+				editOtherUserProfileBean.lastName = responseObject
+						.getString("lastname");
+				editOtherUserProfileBean.cellPhone = responseObject
+						.getString("cellphone");
+				editOtherUserProfileBean.emailId = responseObject
+						.getString("email");
+				if (responseObject.getString("getemails").equals("0")) {
+					editOtherUserProfileBean.getEmailStatus = false;
+
+				} else {
+					editOtherUserProfileBean.getEmailStatus = true;
+
+				}
+				responseArray = responseObject.getJSONArray("roles");
+
+				if (responseArray.length() != 0) {
+					RoleBean roleBean = null;
+					editOtherUserProfileBean.roleBeanList = new ArrayList<RoleBean>();
+					for (int i = 0; i < responseArray.length(); i++) {
+						roleBean = new RoleBean();
+						roleBean.roleId = responseArray.getJSONObject(i)
+								.getString("roleid");
+						roleBean.roleName = responseArray.getJSONObject(i)
+								.getString("name");
+						if (responseArray.getJSONObject(i).getInt("member") == 0) {
+							roleBean.roleStatus = false;
+						} else {
+							roleBean.roleStatus = true;
+						}
+						editOtherUserProfileBean.roleBeanList.add(roleBean);
+					}
+				}
+				JSONArray roleAccessArray = responseObject
+						.getJSONArray("access");
+				if (roleAccessArray.length() != 0) {
+					AccessBean accessBean = null;
+					editOtherUserProfileBean.accessBeanList = new ArrayList<AccessBean>();
+
+					for (int i = 0; i < roleAccessArray.length(); i++) {
+						accessBean = new AccessBean();
+						accessBean.accessId = roleAccessArray.getJSONObject(i)
+								.getString("accessid");
+						accessBean.accessName = roleAccessArray
+								.getJSONObject(i).getString("name");
+						if (roleAccessArray.getJSONObject(i).getInt("member") == 0) {
+							accessBean.accessStatus = false;
+						} else {
+							accessBean.accessStatus = true;
+						}
+						editOtherUserProfileBean.accessBeanList.add(accessBean);
+					}
+				}
+				responseCallback.onSuccessRecieve(editOtherUserProfileBean);
+			} else {
+				responseCallback.onErrorRecieve("no record found");
+			}
+		} catch (Exception e) {
+			responseCallback
+					.onErrorRecieve("Exception arrise while fetch information"
+							+ e.toString());
+		}
+
+	}
+
+	/**
+	 * 
+	 * developer:Manpreet date:18-Oct-2015 return:void description: method for
+	 * fetch role list
+	 */
+	public void fetchRoleList(String response, ResponseCallback responseCallback) {
+		try {
+			responseObject = new JSONObject(response);
+			responseArray = responseObject.getJSONArray("roles");
+
+			if (responseArray.length() != 0) {
+				RoleBean roleBean = null;
+				List<RoleBean> roleBeansList = new ArrayList<RoleBean>();
+				for (int i = 0; i < responseArray.length(); i++) {
+					roleBean = new RoleBean();
+					roleBean.roleId = responseArray.getJSONObject(i).getString(
+							"roleid");
+					roleBean.roleName = responseArray.getJSONObject(i)
+							.getString("name");
+					roleBean.roleColor = responseArray.getJSONObject(i)
+							.getString("color");
+					roleBean.roleUsers = responseArray.getJSONObject(i)
+							.getString("usernames");
+					roleBean.roleDescription = responseArray.getJSONObject(i)
+							.getString("description");
+					roleBeansList.add(roleBean);
+				}
+				responseCallback.onSuccessRecieve(roleBeansList);
+			} else {
+				responseCallback.onErrorRecieve("no record found");
+			}
+
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 	}
 

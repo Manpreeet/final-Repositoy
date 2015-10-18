@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="color_red">#c9383f</color>
+    <color name="color_black">#000000</color>
+    <color name="color_list_seperator">#e2e2e2</color>
+
+</resources>

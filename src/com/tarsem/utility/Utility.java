@@ -237,7 +237,7 @@ public class Utility {
 		System.out.println("Current time => " + c.getTime());
 		long date = System.currentTimeMillis();
 
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 		df.setTimeZone(TimeZone.getTimeZone("IST"));
 		String formattedDate = df.format(date);
 		/*

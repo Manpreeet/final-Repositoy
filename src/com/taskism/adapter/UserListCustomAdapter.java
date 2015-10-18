@@ -6,6 +6,7 @@ package com.taskism.adapter;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import com.tarsem.bean.UserBean;
 import com.tarsem.constant.Constant;
 import com.tarsem.control.ActivityController;
+import com.task.taskApplication.EditUserActivity;
 import com.task.taskApplication.R;
 import com.task.taskApplication.UserListActivity;
 
@@ -102,6 +104,7 @@ public class UserListCustomAdapter extends BaseAdapter {
 		UserBean userBean = userBeansList.get(position);
 		viewHolder.userName.setText(userBean.userName);
 		viewHolder.deleteUser.setTag(position);
+		viewHolder.editUser.setTag(position);
 		viewHolder.deleteUser.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -116,10 +119,15 @@ public class UserListCustomAdapter extends BaseAdapter {
 
 			@Override
 			public void onClick(View v) {
-				ActivityController.startActivityController(
-						Constant.EditUserActivity, null, editUserActivity,
-						false);
-			}
+				int pos = (Integer)v.getTag();
+				int userId = Integer.parseInt(userBeansList.get(pos).userId);
+				Intent intent = new Intent(context,EditUserActivity.class);
+				intent.putExtra(Constant.userid,userId);
+				context.startActivity(intent);
+				/*
+				 * ActivityController.startActivityController(
+				 * Constant.EditUserActivity, null, editUserActivity, false);
+				 */}
 		});
 		return convertView;
 	}

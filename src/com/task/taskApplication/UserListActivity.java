@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.tarsem.bean.UserBean;
 import com.tarsem.constant.ApplicationConstant;
 import com.tarsem.constant.Constant;
+import com.tarsem.control.ActivityController;
 import com.tarsem.request.DeleteAsyncTask;
 import com.tarsem.request.GetUserListAsyncTask;
 import com.tarsem.responsecallback.ResponseCallback;
@@ -76,6 +77,7 @@ public class UserListActivity extends ParentActivity {
 			loadingBar.setVisibility(View.VISIBLE);
 			getUserList();
 		} else {
+			noUserFoundText.setVisibility(View.VISIBLE);
 			new Utility().showCustomDialog("Ok", "Internet Connection",
 					"no internet connection", false, UserListActivity.this,
 					null, null);
@@ -190,6 +192,13 @@ public class UserListActivity extends ParentActivity {
 	public void openLeftPanel(View view) {
 		showMenu();
 
+	}
+	public void addNewUser(View view) {
+		ActivityController.startActivityController(Constant.AddUserActivity,
+				null, UserListActivity.this, false);
+
+
+		
 	}
 
 	/*

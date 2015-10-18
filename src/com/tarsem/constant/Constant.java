@@ -14,6 +14,7 @@ public class Constant {
 	public static int homeActivity = 3;
 	public static int commentsActivity = 4;
 	public static int EditUserActivity = 5;
+	public static int AddUserActivity = 7;
 	public static final String emptyFieldValidationMsg = "Enter value first";
 	public static final String emailFieldValidation = "Enter email first";
 	public static final String passwordFieldValidation = "Enter password first";
@@ -29,6 +30,7 @@ public class Constant {
 	public static final String scheduleId = "scheduleId";
 	public static final String taskName = "taskName";
 	public static final String userid = "userid";
+	public static final String updateUserId = "updateid";
 	/**
 	 * SharedPrefrence object declaration
 	 */

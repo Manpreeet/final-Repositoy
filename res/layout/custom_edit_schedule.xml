@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/editScheduleParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutEditScheduleDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/editScheduleSetting" >
+
+            <RelativeLayout
+                android:id="@+id/colorBar"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/relativeLayoutTaskDetail"
+                android:layout_alignParentLeft="true"
+                android:layout_alignTop="@+id/relativeLayoutTaskDetail"
+                android:background="@color/color_red" />
+
+            <RelativeLayout
+                android:id="@id/relativeLayoutTaskDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/colorBar"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp" >
+
+                <TextView
+                    android:id="@+id/sceduledTaskName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:paddingBottom="3dp"
+                    android:text="Bar Black"
+                    android:textColor="@color/color_black" />
+
+                <TextView
+                    android:id="@id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sceduledTaskName"
+                    android:paddingBottom="3dp"
+                    android:text="Courtney Ralph"
+                    android:textColor="@color/color_black" />
+
+                <TextView
+                    android:id="@+id/sceduledTaskTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/userName"
+                    android:text="10.00pm-12.00pm"
+                    android:textColor="@color/color_black" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@id/editScheduleSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/relativeLayoutEditScheduleDetail"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/relativeLayoutEditScheduleDetail"
+            android:background="@android:color/black"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/editScheduleImage"
+                    android:layout_width="28dip"
+                    android:layout_height="26dip"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_action_edit" />
+
+                <ImageView
+                    android:id="@+id/deleteScheduleImage"
+                    android:layout_width="28dip"
+                    android:layout_height="26dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_action_cancel" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/parentView"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/editScheduleSetting"
+            android:background="@color/color_list_seperator" >
+        </View>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -44,6 +44,7 @@ public class MyProfileActivity extends ParentActivity {
 			getProfileInfo();
 
 		} else {
+			
 			new Utility().showCustomDialog("Ok","Internet Connection",
 					"no internet connection", false, MyProfileActivity.this,
 					null, null);

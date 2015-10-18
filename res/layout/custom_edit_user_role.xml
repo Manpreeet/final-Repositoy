@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/editUserRoleParent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutEditUserRole"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/editUserRoleSetting" >
+
+            <RelativeLayout
+                android:id="@+id/colorBar"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/userRoleName"
+                android:layout_alignParentLeft="true"
+                android:layout_alignTop="@+id/userRoleName"
+                android:background="@color/color_red" />
+
+            <TextView
+                android:id="@id/userRoleName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/colorBar"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:paddingBottom="20dp"
+                android:paddingLeft="10dp"
+                android:paddingTop="20dp"
+                android:text="Courtney Ralph"
+                android:textColor="@color/color_black" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@id/editUserRoleSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/relativeLayoutEditUserRole"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/relativeLayoutEditUserRole"
+            android:background="@android:color/black"
+            android:gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/editUserRoleImage"
+                    android:layout_width="28dip"
+                    android:layout_height="26dip"
+                    android:layout_gravity="center_horizontal"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_action_edit" />
+
+                <ImageView
+                    android:id="@+id/deleteUserRoleImage"
+                    android:layout_width="28dip"
+                    android:layout_height="26dip"
+                    android:contentDescription="@null"
+                    android:src="@drawable/ic_action_cancel" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/parentView"
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/editUserRoleSetting"
+            android:background="@color/color_list_seperator" >
+        </View>
+    </RelativeLayout>
+
+</LinearLayout>

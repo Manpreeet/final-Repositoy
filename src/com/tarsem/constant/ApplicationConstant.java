@@ -17,9 +17,11 @@ public class ApplicationConstant {
 	public static String getMyScheduleListRequest = "myscheduledtasks";
 	public static String getUserListRequest = "userlist";
 	public static String deleteUserRequest = "userdelete";
-	public static String allUserScheduleTask ="scheduledusertasks";
+	public static String allUserScheduleTask = "scheduledusertasks";
+	public static String getRoleListRequest = "rolelist";
 
 	public static String editProfileRequestType = "getprofileinfo";
+	public static String editOtherUserProfile = "userinfo";
 	public static final String forgetRequestType = "forgotpassword";
 
 	// forgotpassword&email=gairy@oaklandera.commmj

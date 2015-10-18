@@ -21,9 +21,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="Users"
-            android:textColor="@android:color/white"
-            android:textSize="15sp" />
+            android:text="Task List"
+            android:textColor="@android:color/white" />
 
         <ImageView
             android:id="@+id/navigationImage"
@@ -37,13 +36,19 @@
             android:src="@drawable/ic_drawer" />
     </RelativeLayout>
 
-    <ListView
-        android:id="@+id/userList"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/headerlayout"
-        android:scrollbars="none" >
-    </ListView>
+        android:layout_height="match_parent"
+        android:layout_below="@+id/headerlayout" >
+
+        <ListView
+            android:id="@+id/userTasksList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none" >
+        </ListView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
     <ProgressBar
         android:id="@+id/loadingProgress"
@@ -55,11 +60,11 @@
         android:visibility="gone" />
 
     <TextView
-        android:id="@+id/noUserFoundText"
+        android:id="@+id/noRecordFoundText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="no user found"
+        android:text="no record found"
         android:visibility="gone" />
 
     <ImageView
@@ -68,7 +73,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="addNewUser"
         android:padding="5dip"
         android:src="@drawable/add_icon" />
 

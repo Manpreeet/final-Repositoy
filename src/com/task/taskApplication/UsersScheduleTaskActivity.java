@@ -6,11 +6,14 @@ package com.task.taskApplication;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -68,8 +71,7 @@ public class UsersScheduleTaskActivity extends ParentActivity {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-	}
+}
 
 	/*
 	 * (non-Javadoc)

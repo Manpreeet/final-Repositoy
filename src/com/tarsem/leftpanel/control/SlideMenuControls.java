@@ -59,15 +59,17 @@ public class SlideMenuControls extends ParentActivity {
 
 					@Override
 					public void onClick(View v) {
-						if (new Utility().getUserAdminStatus(ctx)) {
-
-							clickEvent(ctx, UserListActivity.class);
-							closeMEnu(ctx);
-						} else {
-							Toast.makeText(ctx, "you dont have permission",
-									Toast.LENGTH_LONG).show();
-							// showToastMessage("you dont have permission");
-						}
+						clickEvent(ctx, UserListActivity.class);
+						closeMEnu(ctx);
+						/*
+						 * if (new Utility().getUserAdminStatus(ctx)) {
+						 * 
+						 * clickEvent(ctx, UserListActivity.class);
+						 * closeMEnu(ctx); } else { Toast.makeText(ctx,
+						 * "you dont have permission",
+						 * Toast.LENGTH_LONG).show(); //
+						 * showToastMessage("you dont have permission"); }
+						 */
 
 					}
 				});
@@ -77,7 +79,9 @@ public class SlideMenuControls extends ParentActivity {
 
 					@Override
 					public void onClick(View v) {
-						if (new Utility().getRoleAdminStatus(ctx)) {
+						clickEvent(ctx, EditRoleActivity.class);
+						closeMEnu(ctx);
+						/*if (new Utility().getRoleAdminStatus(ctx)) {
 
 							clickEvent(ctx, EditRoleActivity.class);
 							closeMEnu(ctx);
@@ -86,7 +90,7 @@ public class SlideMenuControls extends ParentActivity {
 									Toast.LENGTH_LONG).show();
 							// showToastMessage("you dont have permission");
 						}
-
+*/
 					}
 				});
 		ctx.findViewById(R.id.editTaskParent).setOnClickListener(
@@ -94,7 +98,9 @@ public class SlideMenuControls extends ParentActivity {
 
 					@Override
 					public void onClick(View v) {
-						if (new Utility().getTaskAdminStatus(ctx)) {
+						clickEvent(ctx, EditTaskActivity.class);
+						closeMEnu(ctx);
+						/*if (new Utility().getTaskAdminStatus(ctx)) {
 
 							clickEvent(ctx, EditTaskActivity.class);
 							closeMEnu(ctx);
@@ -102,7 +108,7 @@ public class SlideMenuControls extends ParentActivity {
 							Toast.makeText(ctx, "you dont have permission",
 									Toast.LENGTH_LONG).show();
 							// showToastMessage("you dont have permission");
-						}
+						}*/
 
 					}
 				});
@@ -111,7 +117,9 @@ public class SlideMenuControls extends ParentActivity {
 
 					@Override
 					public void onClick(View v) {
-						if (new Utility().getSheduleAdminStatus(ctx)) {
+						clickEvent(ctx, EditScheduleActivity.class);
+						closeMEnu(ctx);
+						/*if (new Utility().getSheduleAdminStatus(ctx)) {
 
 							clickEvent(ctx, EditScheduleActivity.class);
 							closeMEnu(ctx);
@@ -119,7 +127,7 @@ public class SlideMenuControls extends ParentActivity {
 							Toast.makeText(ctx, "you dont have permission",
 									Toast.LENGTH_LONG).show();
 							// showToastMessage("you dont have permission");
-						}
+						}*/
 
 					}
 				});
@@ -213,9 +221,8 @@ public class SlideMenuControls extends ParentActivity {
 		i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		context.startActivity(i);
-
-		context.overridePendingTransition(R.anim.slide_in, R.anim.slide_out);
 		context.finish();
+		overridePendingTransition(R.anim.slide_back_in, R.anim.slide_back_out);
 	}
 
 	/**
