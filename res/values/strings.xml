@@ -30,4 +30,15 @@
     <string name="sign_out">Sign Out</string>
     <!-- left panel text attributes declaration end -->
 
+
+    <!-- Add new task attributes declaration -->
+    <string name = "taskScreenTitle">New Task</string>
+    <string name="taskName">Task Name</string>
+    <string name="instructions">Instructions</string>
+    <string name="role">Role</string>
+    <string name="scheduling_weekly">SchedulingWeekly</string>
+    <string name="title_activity_new_task">NewTaskActivity</string>
+    <string name="title_activity_edit_task_info">EditTaskInfoActivity</string>
+    <!-- Add new task attributes declaration end -->
+
 </resources>

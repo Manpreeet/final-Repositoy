@@ -1,0 +1,1054 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="42dip"
+        android:background="@drawable/topbar" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:contentDescription="@null"
+            android:padding="5dip"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Tutorial"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@null"
+            android:onClick="openLeftPanel"
+            android:padding="5dip"
+            android:src="@drawable/ic_drawer" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="5dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="0dp"
+            android:layout_height="40dip"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#70b500"
+            android:text="Save"
+            android:textColor="@android:color/white" >
+        </Button>
+
+        <Button
+            android:id="@+id/buttonAddImage"
+            android:layout_width="0dp"
+            android:layout_height="40dip"
+            android:layout_weight="1"
+            android:background="#70b500"
+            android:text="Add Image"
+            android:textColor="@android:color/white" >
+        </Button>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonLayout"
+        android:layout_below="@+id/relativeLayoutHeader" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:padding="5dip" >
+
+                <TextView
+                    android:id="@+id/taskNameText"
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/taskName"
+                    android:textColor="@color/color_black" />
+
+                <EditText
+                    android:id="@+id/taskNameInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/taskNameText"
+                    android:background="@drawable/input"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="5dip"
+                    android:paddingRight="5dip" >
+                </EditText>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:padding="5dip"
+                android:visibility="visible" >
+
+                <TextView
+                    android:id="@+id/instructionsText"
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/instructions"
+                    android:textColor="@color/color_black" />
+
+                <EditText
+                    android:id="@+id/instructionsInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/instructionsText"
+                    android:background="@drawable/input"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:paddingLeft="5dip"
+                    android:paddingRight="5dip" >
+                </EditText>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/roleParent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:padding="5dip"
+                android:visibility="visible" >
+
+                <TextView
+                    android:id="@+id/RoleText"
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/role"
+                    android:textColor="@color/color_black" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayCheckBoxRole"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/RoleText"
+                    android:orientation="vertical" >
+
+                    <!--
+                     <CheckBox
+                         android:id="@+id/checkBoxBarBack"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="Bar Back" />
+
+                     <CheckBox
+                         android:id="@+id/checkBoxBartender"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="Bartender" />
+
+                     <CheckBox
+                         android:id="@+id/checkBoxBottleService"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="Bottle Service" />
+
+                     <CheckBox
+                         android:id="@+id/checkBoxCleaning"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="Cleaning" />
+
+                     <CheckBox
+                         android:id="@+id/checkBoxCoatCheck"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="Coat Check" />
+
+                     <CheckBox
+                         android:id="@+id/checkBoxManager"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="Manager" />
+
+                     <CheckBox
+                         android:id="@+id/checkBoxMarketing"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:text="Marketing" />
+                    -->
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- role layout end -->
+
+            <RelativeLayout
+                android:id="@+id/schedulingWeekly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:padding="5dip"
+                android:visibility="visible" >
+
+                <TextView
+                    android:id="@+id/schedulingWeeklyText"
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="5dp"
+                    android:paddingRight="2dp"
+                    android:text="@string/scheduling_weekly"
+                    android:textColor="@color/color_black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/schedulingWeeklyText"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="S" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="M" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="T" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="W" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="T" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="F" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="S" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBoxSu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBoxMo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBoxTu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBoxWe"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBoxTh"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBoxFr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBoxSa"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <!-- Scheduling weekly end -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="105dp"
+                android:padding="5dip"
+                android:text="Monthly"
+                android:textColor="@color/color_black" />
+
+            <!-- role layout end -->
+
+            <RelativeLayout
+                android:id="@+id/schedulingMonthly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:padding="5dip" >
+
+                <LinearLayout
+                    android:id="@+id/schedulingMonthlyText"
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingRight="5dp" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/table_row_height"
+                        android:gravity="center_vertical|right"
+                        android:text="Week"
+                        android:textColor="@color/color_black" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/table_row_height"
+                        android:gravity="center_vertical|right"
+                        android:text="1st" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/table_row_height"
+                        android:gravity="center_vertical|right"
+                        android:text="2st" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/table_row_height"
+                        android:gravity="center_vertical|right"
+                        android:text="3st" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/table_row_height"
+                        android:gravity="center_vertical|right"
+                        android:text="4st" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/table_row_height"
+                        android:gravity="center_vertical|right"
+                        android:text="5st" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/schedulingMonthlyText"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="S" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="M" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="T" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="W" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="T" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="F" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center"
+                            android:text="S" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox0"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox17"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox19"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox21"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox22"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox23"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox24"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox25"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox26"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox27"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox28"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox29"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox30"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox31"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox32"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox33"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/table_row_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/text_rect"
+                            android:gravity="center" >
+
+                            <CheckBox
+                                android:id="@+id/checkBox34"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/table_row_height" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:padding="5dip" >
+
+                <TextView
+                    android:id="@+id/onceText"
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="Once"
+                    android:textColor="@color/color_black" />
+
+                <TextView
+                    android:id="@+id/onceInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toRightOf="@+id/onceText"
+                    android:background="@drawable/input"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="5dip"
+                    android:text="mm/dd/yyyy" >
+                </TextView>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

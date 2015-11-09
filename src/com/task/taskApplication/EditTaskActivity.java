@@ -5,15 +5,6 @@ package com.task.taskApplication;
 
 import java.util.List;
 
-import com.tarsem.bean.TaskListBean;
-import com.tarsem.constant.ApplicationConstant;
-import com.tarsem.request.MarkAsyncTask;
-import com.tarsem.request.ServerAsyncTask;
-import com.tarsem.responsecallback.ResponseCallback;
-import com.tarsem.utility.Utility;
-import com.taskism.adapter.CustomEditTaskAdapter;
-import com.taskism.adapter.CustomTaskAdapter;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -23,6 +14,16 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import com.tarsem.bean.TaskListBean;
+import com.tarsem.constant.ApplicationConstant;
+import com.tarsem.constant.Constant;
+import com.tarsem.control.ActivityController;
+import com.tarsem.request.MarkAsyncTask;
+import com.tarsem.request.ServerAsyncTask;
+import com.tarsem.responsecallback.ResponseCallback;
+import com.tarsem.utility.Utility;
+import com.taskism.adapter.CustomEditTaskAdapter;
 
 /**
  * @author Manpreet
@@ -80,11 +81,18 @@ public class EditTaskActivity extends ParentActivity {
 	@Override
 	protected void onStart() {
 		super.onStart();
-		//setCurrentDate();
+		setCurrentDate();
 		refreshView();
 		if (isConnectedToInternet()) {
 			loadingProgress.setVisibility(View.VISIBLE);
 			getTaskList();
+
+		} else {
+			new Utility().showCustomDialog(
+					Constant.internetConnectionPopupButtonText,
+					Constant.internetConnectionTitle,
+					Constant.internetConnectionMessage, false,
+					EditTaskActivity.this, null, null);
 
 		}
 	}
@@ -116,8 +124,8 @@ public class EditTaskActivity extends ParentActivity {
 	private void getTaskList() {
 		// http://taskism.com/webservice001/?action=allusertasks&date=2015-07-10&userid=14
 		new ServerAsyncTask(ApplicationConstant.appurl
-				+ ApplicationConstant.allUserScheduleTask + "&"
-				+ "date=2015-07-10" + "&userid=14", context,
+				+ ApplicationConstant.getTaskListRequest + "&"
+				+ "date=2015-07-10" + "&userid=62", context,
 				new ResponseCallback() {
 
 					@Override
@@ -128,7 +136,6 @@ public class EditTaskActivity extends ParentActivity {
 								taskListBeans, EditTaskActivity.this);
 						userTaskList.setAdapter(customTaskAdapter);
 						customTaskAdapter.notifyDataSetChanged();
-
 						swipeRefresh.setRefreshing(false);
 						loadingProgress.setVisibility(View.GONE);
 
@@ -159,26 +166,23 @@ public class EditTaskActivity extends ParentActivity {
 		} else {
 			checkId = 0;
 		}
-		new MarkAsyncTask(
-				"http://taskism.com/webservice001/?action=checkuncheck&date=2015-09-04&scheduleid="
-						+ scheduleId
-						+ "&taskid="
-						+ taskId
-						+ "&userid=14&checked=" + checkId, context,
-				new ResponseCallback() {
+		new MarkAsyncTask(ApplicationConstant.appurl + "checkuncheck&date="
+				+ Utility.getDate() + "&scheduleid=" + scheduleId + "&taskid="
+				+ taskId + "&userid=" + Constant.getLoggedUserId(context)
+				+ "&checked=" + checkId, context, new ResponseCallback() {
 
-					@Override
-					public void onSuccessRecieve(Object object) {
-						loadingProgress.setVisibility(View.GONE);
-					}
+			@Override
+			public void onSuccessRecieve(Object object) {
+				loadingProgress.setVisibility(View.GONE);
+			}
 
-					@Override
-					public void onErrorRecieve(Object object) {
-						loadingProgress.setVisibility(View.GONE);
+			@Override
+			public void onErrorRecieve(Object object) {
+				loadingProgress.setVisibility(View.GONE);
 
-						showToastMessage((String) object);
-					}
-				}, null).execute();
+				showToastMessage((String) object);
+			}
+		}, null).execute();
 
 	}
 
@@ -196,6 +200,17 @@ public class EditTaskActivity extends ParentActivity {
 
 	public void openLeftPanel(View view) {
 		showMenu();
+
+	}
+
+	/**
+	 * 
+	 * developer:manpreets2 date:Nov 3, 2015 return:void description: method for
+	 * launch new activity
+	 */
+	public void onClickAddTask(View view) {
+		ActivityController.startActivityController(Constant.AddNewTaskActivity,
+				null, EditTaskActivity.this, false);
 
 	}
 

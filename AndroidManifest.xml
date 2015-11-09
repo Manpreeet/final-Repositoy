@@ -18,7 +18,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".LoginActivity"
+            android:name=".AddNewRoleActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
@@ -55,7 +55,7 @@
             android:name="com.task.taskApplication.EditRoleActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.task.taskApplication.EditTaskActivity"
+            android:name="com.task.taskApplication.LoginActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.task.taskApplication.EditScheduleActivity"
@@ -71,6 +71,18 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.task.taskApplication.UserScheduleDescriptionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.task.taskApplication.AddImageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.task.taskApplication.EditTaskInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.task.taskApplication.NewTaskActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.task.taskApplication.UpdateRoleActivity"
             android:screenOrientation="portrait" />
     </application>
 

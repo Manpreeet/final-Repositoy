@@ -23,6 +23,13 @@ public class ApplicationConstant {
 	public static String editProfileRequestType = "getprofileinfo";
 	public static String editOtherUserProfile = "userinfo";
 	public static final String forgetRequestType = "forgotpassword";
+	
+	public static final String newTaskRequestType = "tasknew";
+	public static final String roleListRequestType = "rolelist";
+	public static final String taskinfoRequestType = "taskinfo";
+	public static final String taskeditRequestType = "taskedit";
+
+    public static final String getTaskStepNewRequest="taskstepnew";
 
 	// forgotpassword&email=gairy@oaklandera.commmj
 	public static String appurl = baseUrl + actiionUrl;

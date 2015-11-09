@@ -167,7 +167,7 @@ public class AddNewUserActivity extends ParentActivity {
 	 * post data on server on tap save button
 	 */
 	public void onClickSave(View view) {
-
+		showToastMessage("webservice require");
 	}
 
 	public void openLeftPanel(View view) {

@@ -6,20 +6,18 @@ package com.task.taskApplication;
 import java.util.List;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.tarsem.bean.TaskListBean;
 import com.tarsem.constant.ApplicationConstant;
+import com.tarsem.constant.Constant;
 import com.tarsem.request.MarkAsyncTask;
 import com.tarsem.request.ServerAsyncTask;
 import com.tarsem.responsecallback.ResponseCallback;
@@ -38,6 +36,7 @@ public class UsersScheduleTaskActivity extends ParentActivity {
 	CustomTaskAdapter customTaskAdapter;
 	ProgressBar loadingProgress;
 	SwipeRefreshLayout swipeRefresh;
+	private TextView noRecordFoundText;
 
 	/*
 	 * (non-Javadoc)
@@ -46,7 +45,6 @@ public class UsersScheduleTaskActivity extends ParentActivity {
 	 */
 	@Override
 	protected void onCreate(Bundle arg0) {
-		// TODO Auto-generated method stub
 		super.onCreate(arg0);
 		setContentView(R.layout.activity_home);
 		findAttributesId();
@@ -60,6 +58,7 @@ public class UsersScheduleTaskActivity extends ParentActivity {
 		context = this;
 		userTaskList = (ListView) findViewById(R.id.userTasksList);
 		currentDateText = (TextView) findViewById(R.id.currentDate);
+		noRecordFoundText = (TextView) findViewById(R.id.noRecordFoundText);
 		loadingProgress = (ProgressBar) findViewById(R.id.loadingProgress);
 		swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
 		swipeRefresh.setColorSchemeColors(Color.RED, Color.BLUE, Color.CYAN,
@@ -71,7 +70,7 @@ public class UsersScheduleTaskActivity extends ParentActivity {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-}
+	}
 
 	/*
 	 * (non-Javadoc)
@@ -87,6 +86,8 @@ public class UsersScheduleTaskActivity extends ParentActivity {
 			loadingProgress.setVisibility(View.VISIBLE);
 			getTaskList();
 
+		} else {
+			noRecordFoundText.setVisibility(View.VISIBLE);
 		}
 	}
 
@@ -118,7 +119,7 @@ public class UsersScheduleTaskActivity extends ParentActivity {
 		// http://taskism.com/webservice001/?action=allusertasks&date=2015-07-10&userid=14
 		new ServerAsyncTask(ApplicationConstant.appurl
 				+ ApplicationConstant.allUserScheduleTask + "&"
-				+ "date=2015-07-10" + "&userid=14", context,
+				+ "date=2015-09-21" + "&userid=62", context,
 				new ResponseCallback() {
 
 					@Override
@@ -129,7 +130,7 @@ public class UsersScheduleTaskActivity extends ParentActivity {
 								taskListBeans, UsersScheduleTaskActivity.this);
 						userTaskList.setAdapter(customTaskAdapter);
 						customTaskAdapter.notifyDataSetChanged();
-
+						noRecordFoundText.setVisibility(View.GONE);
 						swipeRefresh.setRefreshing(false);
 						loadingProgress.setVisibility(View.GONE);
 
@@ -138,7 +139,7 @@ public class UsersScheduleTaskActivity extends ParentActivity {
 					@Override
 					public void onErrorRecieve(Object object) {
 						loadingProgress.setVisibility(View.GONE);
-
+						noRecordFoundText.setVisibility(View.VISIBLE);
 						swipeRefresh.setRefreshing(false);
 						showToastMessage((String) object);
 					}
@@ -160,26 +161,23 @@ public class UsersScheduleTaskActivity extends ParentActivity {
 		} else {
 			checkId = 0;
 		}
-		new MarkAsyncTask(
-				"http://taskism.com/webservice001/?action=checkuncheck&date=2015-09-04&scheduleid="
-						+ scheduleId
-						+ "&taskid="
-						+ taskId
-						+ "&userid=14&checked=" + checkId, context,
-				new ResponseCallback() {
+		new MarkAsyncTask(ApplicationConstant.appurl + "checkuncheck" + ""
+				+ "&" + "date=2015-09-21" + Utility.getDate() + "&scheduleid="
+				+ scheduleId + "&taskid=" + taskId + "&userid=14" + "&checked="
+				+ checkId, context, new ResponseCallback() {
 
-					@Override
-					public void onSuccessRecieve(Object object) {
-						loadingProgress.setVisibility(View.GONE);
-					}
+			@Override
+			public void onSuccessRecieve(Object object) {
+				loadingProgress.setVisibility(View.GONE);
+			}
 
-					@Override
-					public void onErrorRecieve(Object object) {
-						loadingProgress.setVisibility(View.GONE);
+			@Override
+			public void onErrorRecieve(Object object) {
+				loadingProgress.setVisibility(View.GONE);
 
-						showToastMessage((String) object);
-					}
-				}, null).execute();
+				showToastMessage((String) object);
+			}
+		}, null).execute();
 
 	}
 
@@ -191,7 +189,7 @@ public class UsersScheduleTaskActivity extends ParentActivity {
 		try {
 			currentDateText.setText(Utility.getDate());
 		} catch (Exception e) {
-			// TODO: handle exception
+			currentDateText.setText("Configure your device date");
 		}
 	}
 

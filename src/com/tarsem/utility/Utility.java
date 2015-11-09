@@ -43,6 +43,7 @@ import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -51,7 +52,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.tarsem.constant.Constant;
 import com.tarsem.control.ActivityController;
 import com.tarsem.responsecallback.ResponseCallback;
 import com.tarsem.responsecallback.SettingResponseCallback;
@@ -689,7 +689,7 @@ public class Utility {
 	 */
 	public void showCustomDialog(String submitBtnText, String title,
 			String description, boolean status, final Activity activity,
-			final Class class1, ResponseCallback responseCallback) {
+			final Class class1, final ResponseCallback responseCallback) {
 		final Dialog dialog = new Dialog(activity);
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		dialog.setContentView(R.layout.custom_dialog);
@@ -716,6 +716,10 @@ public class Utility {
 
 			@Override
 			public void onClick(View v) {
+				
+				if (responseCallback!=null) {
+					responseCallback.onSuccessRecieve(true);
+				}
 				if (class1 != null) {
 					ActivityController.startActivityController(6, null,
 							activity, true);
@@ -725,4 +729,42 @@ public class Utility {
 		});
 
 	}
+	
+	/**
+	 * 
+	 * developer:manpreets2
+	   date:Nov 3, 2015
+	   return:String
+	   description: method for encode bitmap to string
+	 */
+	public static String encodeTobase64(Bitmap image)
+    {
+        Bitmap immagex=image;
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();  
+        immagex.compress(Bitmap.CompressFormat.JPEG, 70, baos);
+        byte[] b = baos.toByteArray();
+        String imageEncoded = Base64.encodeToString(b,Base64.DEFAULT);
+
+        Log.e("Taskism", imageEncoded);
+        return imageEncoded;
+    }
+	/**
+	 * 
+	 * developer:manpreets2
+	   date:Nov 3, 2015
+	   return:String
+	   description: method for encode bitmap to string
+	 */
+	public static byte[] encodeToByte(Bitmap image)
+    {
+        Bitmap immagex=image;
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();  
+        immagex.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] b = baos.toByteArray();
+        String imageEncoded = Base64.encodeToString(b,Base64.DEFAULT);
+
+        Log.e("Taskism", imageEncoded);
+        return b;
+    }
+
 }

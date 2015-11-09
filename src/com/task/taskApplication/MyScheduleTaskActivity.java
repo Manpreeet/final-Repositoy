@@ -124,7 +124,7 @@ public class MyScheduleTaskActivity extends ParentActivity {
 		// http://taskism.com/webservice001/?action=allusertasks&date=2015-07-10&userid=14
 		new ServerAsyncTask(ApplicationConstant.appurl
 				+ ApplicationConstant.getMyScheduleListRequest + "&"
-				+ "date=2015-07-10" + "&userid=14", context,
+				+ "date=2015-09-21" + "&userid=62", context,
 				new ResponseCallback() {
 
 					@Override

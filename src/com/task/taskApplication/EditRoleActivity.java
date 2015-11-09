@@ -7,11 +7,16 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.tarsem.bean.RoleBean;
 import com.tarsem.bean.ScheduledTaskBean;
 import com.tarsem.bean.TaskListBean;
 import com.tarsem.bean.UserRoleBean;
 import com.tarsem.constant.ApplicationConstant;
+import com.tarsem.constant.Constant;
+import com.tarsem.control.ActivityController;
+import com.tarsem.request.DeleteAsyncTask;
 import com.tarsem.request.MarkAsyncTask;
+import com.tarsem.request.RoleListAsyncTask;
 import com.tarsem.request.ServerAsyncTask;
 import com.tarsem.responsecallback.ResponseCallback;
 import com.tarsem.utility.Utility;
@@ -42,6 +47,7 @@ public class EditRoleActivity extends ParentActivity {
 	private ProgressBar loadingProgress;
 	private SwipeRefreshLayout swipeRefresh;
 	private TextView noRecordFoundText;
+	List<RoleBean> roleBeansList;
 
 	/*
 	 * (non-Javadoc)
@@ -70,9 +76,9 @@ public class EditRoleActivity extends ParentActivity {
 		swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
 		swipeRefresh.setColorSchemeColors(Color.RED, Color.BLUE, Color.CYAN,
 				Color.BLACK);
-
+		roleBeansList = new ArrayList<RoleBean>();
 		customEditUserRoleAdapter = new CustomEditUserRoleAdapter(context,
-				new ArrayList<UserRoleBean>(), parentActivity);
+				roleBeansList, parentActivity);
 		edituserRoleListView.setAdapter(customEditUserRoleAdapter);
 		try {
 			getSideMenu(EditRoleActivity.this);
@@ -134,19 +140,102 @@ public class EditRoleActivity extends ParentActivity {
 	private void fetchRoleList() {
 		swipeRefresh.setVisibility(View.GONE);
 		loadingProgress.setVisibility(View.VISIBLE);
-		ArrayList<UserRoleBean> userRoleList = new ArrayList<UserRoleBean>();
-		for (int i = 0; i < 10; i++) {
-			UserRoleBean userRole = new UserRoleBean();
 
-			userRole.setColor("");
-			userRole.setRoleName("Role Name " + i);
+		new RoleListAsyncTask(
+				"http://taskism.com/webservice001/?action=rolelist&userid=62",
+				context, new ResponseCallback() {
 
-			userRoleList.add(userRole);
+					@Override
+					public void onSuccessRecieve(Object object) {
+						roleBeansList = (List<RoleBean>) object;
+						customEditUserRoleAdapter
+								.updatenewUserRoleList(roleBeansList);
+						swipeRefresh.setVisibility(View.VISIBLE);
+
+						loadingProgress.setVisibility(View.GONE);
+
+					}
+
+					@Override
+					public void onErrorRecieve(Object object) {
+						swipeRefresh.setVisibility(View.VISIBLE);
+						loadingProgress.setVisibility(View.GONE);
+
+					}
+				}).execute();
+
+	}
+
+	
+	/**
+	 * 
+	 * developer:Manpreet date:03-Oct-2015 return:void description: method for
+	 * open delete confirmation popup
+	 */
+	public void showDeleteConfirmationPopup(final String roleId,
+			String userNameValue, final int position) {
+
+		new Utility().showCustomDialog("Delete", "Delete Role",
+				"Are you sure you want to delete: " + userNameValue, false,
+				EditRoleActivity.this, null, new ResponseCallback() {
+
+					@Override
+					public void onSuccessRecieve(Object object) {
+						deleteRole(roleId, position);
+					}
+
+					@Override
+					public void onErrorRecieve(Object object) {
+						// TODO Auto-generated method stub
+
+					}
+				});
+
+	
+
+	}
+
+	
+	
+	/**
+	 * 
+	 * developer:Manpreet date:02-Oct-2015 return:void description: method for
+	 * delete userId
+	 */
+	public void deleteRole(String roleId, final int position) {
+		if (isConnectedToInternet()) {
+			loadingProgress.setVisibility(View.VISIBLE);
+			new DeleteAsyncTask(ApplicationConstant.appurl
+					+ ApplicationConstant.deleteUserRequest + "&roleid="
+					+ roleId, context, new ResponseCallback() {
+
+				@Override
+				public void onSuccessRecieve(Object object) {
+					roleBeansList.remove(position);
+					customEditUserRoleAdapter
+							.updatenewUserRoleList(roleBeansList);
+					loadingProgress.setVisibility(View.GONE);
+				}
+
+				@Override
+				public void onErrorRecieve(Object object) {
+					loadingProgress.setVisibility(View.GONE);
+					showToastMessage((String) object);
+				}
+			}).execute();
+
 		}
+	}
 
-		swipeRefresh.setVisibility(View.VISIBLE);
-		loadingProgress.setVisibility(View.GONE);
-		customEditUserRoleAdapter.updatenewUserRoleList(userRoleList);
+	/**
+	 * 
+	 * developer:Manpreet date:08-Nov-2015 return:void description: method for
+	 * add Role
+	 */
+	public void onClickAddRule(View view) {
+		ActivityController.startActivityController(Constant.AddNewRoleActivity,
+				null, EditRoleActivity.this, false);
+
 	}
 
 	public void openLeftPanel(View view) {

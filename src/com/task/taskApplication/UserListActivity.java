@@ -136,26 +136,7 @@ public class UserListActivity extends ParentActivity {
 					}
 				});
 
-		/*
-		 * final Dialog dialog = new Dialog(context);
-		 * dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		 * dialog.setContentView(R.layout.custom_dialog);
-		 * dialog.setCanceledOnTouchOutside(false); TextView userName =
-		 * (TextView) dialog.findViewById(R.id.userName); Button doneButton =
-		 * (Button) dialog.findViewById(R.id.deleteButton); Button cancelButton
-		 * = (Button) dialog.findViewById(R.id.cancelButton);
-		 * userName.setText(userName.getText().toString() + " " +
-		 * userNameValue); cancelButton.setOnClickListener(new OnClickListener()
-		 * {
-		 * 
-		 * @Override public void onClick(View v) { dialog.dismiss(); } });
-		 * doneButton.setOnClickListener(new OnClickListener() {
-		 * 
-		 * @Override public void onClick(View v) { deleteUser(userId, position);
-		 * dialog.dismiss(); } });
-		 * 
-		 * dialog.show();
-		 */
+	
 
 	}
 
@@ -169,7 +150,7 @@ public class UserListActivity extends ParentActivity {
 			loadingBar.setVisibility(View.VISIBLE);
 			new DeleteAsyncTask(ApplicationConstant.appurl
 					+ ApplicationConstant.deleteUserRequest + "&userid="
-					+ Constant.getLoggedUserId(context), context,
+					+ userId, context,
 					new ResponseCallback() {
 
 						@Override

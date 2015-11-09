@@ -249,6 +249,18 @@ public class EditUserActivity extends ParentActivity {
 	public void openLeftPanel(View view) {
 		showMenu();
 
+
+	}
+	
+	/**
+	 * 
+	 * developer:Manpreet
+	   date:08-Nov-2015
+	   return:void
+	   description: method for perform action on click save button
+	 */
+	public void onClickSave(View view) {
+		showToastMessage("webservice pending");
 	}
 
 	/*

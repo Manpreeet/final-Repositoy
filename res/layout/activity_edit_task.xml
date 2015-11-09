@@ -74,6 +74,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:padding="5dip"
+        android:onClick="onClickAddTask"
         android:src="@drawable/add_icon" />
 
 </RelativeLayout>

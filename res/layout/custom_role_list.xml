@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:padding="5dip" >
+
+        <TextView
+            android:id="@+id/roleTitle"
+            android:layout_width="90dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingRight="5dip"
+            android:text="Role" />
+
+        <TextView
+            android:id="@+id/roleName"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/roleStatus"
+            android:text=""
+            android:textColor="#000" />
+
+        <CheckBox
+            android:id="@+id/roleStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/roleTitle"
+            android:text="" />
+    </RelativeLayout>
+
+</LinearLayout>

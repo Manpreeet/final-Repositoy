@@ -8,6 +8,7 @@ import com.tarsem.constant.Constant;
 import com.tarsem.request.ServerAsyncTask;
 import com.tarsem.responsecallback.ResponseCallback;
 import com.tarsem.utility.Utility;
+
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
@@ -68,8 +69,10 @@ public class ForgetPasswordActivity extends ParentActivity {
 				submitForgetRequestToServer();
 
 			} else {
-				new Utility().showCustomDialog("Ok", "Internet Connection",
-						"no internet access", false,
+				new Utility().showCustomDialog(
+						Constant.internetConnectionPopupButtonText,
+						Constant.internetConnectionTitle,
+						Constant.internetConnectionMessage, false,
 						ForgetPasswordActivity.this, null, null);
 			}
 		}
@@ -108,16 +111,21 @@ public class ForgetPasswordActivity extends ParentActivity {
 	 */
 	public void onClickBack(View view) {
 		finish();
+		overridePendingTransition(R.anim.slide_back_in, R.anim.slide_back_out);
+
 	}
 
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see android.app.Activity#onBackPressed()
+	 * @see android.support.v4.app.FragmentActivity#onBackPressed()
 	 */
 	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
 		finish();
+		overridePendingTransition(R.anim.slide_back_in, R.anim.slide_back_out);
+
 	}
+
 }

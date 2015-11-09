@@ -3,18 +3,25 @@
  */
 package com.taskism.adapter;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tarsem.bean.UserRoleBean;
+import com.tarsem.bean.RoleBean;
+import com.tarsem.constant.Constant;
+import com.task.taskApplication.EditRoleActivity;
 import com.task.taskApplication.R;
+import com.task.taskApplication.UpdateRoleActivity;
 
 /**
  * @author asifa
@@ -22,14 +29,14 @@ import com.task.taskApplication.R;
  */
 public class CustomEditUserRoleAdapter extends BaseAdapter {
 	private Context context;
-	private ArrayList<UserRoleBean> userRoleList;
+	private List<RoleBean> userRoleList;
 	private Activity activity;
 
 	/**
 	 * 
 	 */
 	public CustomEditUserRoleAdapter(Context context,
-			ArrayList<UserRoleBean> userRoleList, Activity activity) {
+			List<RoleBean> userRoleList, Activity activity) {
 		this.userRoleList = userRoleList;
 		this.context = context;
 		this.activity = activity;
@@ -85,20 +92,55 @@ public class CustomEditUserRoleAdapter extends BaseAdapter {
 			viewHolder.colorBar = (View) convertView
 					.findViewById(R.id.colorBar);
 			viewHolder.userRoleName = (TextView) convertView
-					.findViewById(R.id.userRoleName);
+					.findViewById(R.id.userRoleName); 
+			viewHolder.editUserRoleImage = (ImageView) convertView
+					.findViewById(R.id.editUserRoleImage);
+			viewHolder.deleteUserRoleImage = (ImageView) convertView
+					.findViewById(R.id.deleteUserRoleImage);
 
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
 
-		UserRoleBean userRole = userRoleList.get(position);
-		viewHolder.userRoleName.setText(userRole.getRoleName());
+		RoleBean userRole = userRoleList.get(position);
+		viewHolder.userRoleName.setText(userRole.roleName);
+		viewHolder.colorBar.setBackgroundColor(Color.parseColor("#"
+				+ userRole.roleColor));
+		viewHolder.editUserRoleImage.setTag(position);
+		viewHolder.deleteUserRoleImage.setTag(position);
+		viewHolder.editUserRoleImage.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				int pos = (Integer) v.getTag();
+				int userId = Integer.parseInt(userRoleList.get(pos).roleName);
+				Intent intent = new Intent(context, UpdateRoleActivity.class);
+				intent.putExtra(Constant.userid, userId);
+				context.startActivity(intent);
+
+			}
+		});
+
+		viewHolder.deleteUserRoleImage
+				.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						int pos = (Integer) v.getTag();
+						RoleBean userBean = userRoleList.get(pos);
+						((EditRoleActivity) activity)
+								.showDeleteConfirmationPopup(userBean.roleName,
+										userBean.roleName, pos);
+
+					}
+				});
 
 		return convertView;
 	}
 
-	public void updatenewUserRoleList(ArrayList<UserRoleBean> newUserRoleList) {
+	public void updatenewUserRoleList(List<RoleBean> newUserRoleList) {
 		userRoleList.addAll(newUserRoleList);
 		notifyDataSetChanged();
 	}
@@ -106,5 +148,6 @@ public class CustomEditUserRoleAdapter extends BaseAdapter {
 	class ViewHolder {
 		View colorBar;
 		TextView userRoleName;
+		ImageView editUserRoleImage, deleteUserRoleImage;
 	}
 }
