@@ -15,12 +15,12 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tarsem.bean.UserBean;
-import com.tarsem.constant.Constant;
-import com.tarsem.control.ActivityController;
-import com.task.taskApplication.EditUserActivity;
 import com.task.taskApplication.R;
-import com.task.taskApplication.UserListActivity;
+import com.taskism.bean.UserBean;
+import com.taskism.constant.Constant;
+import com.taskism.control.ActivityController;
+import com.taskism.taskApplication.EditUserActivity;
+import com.taskism.taskApplication.UserListActivity;
 
 /**
  * @author Manpreet

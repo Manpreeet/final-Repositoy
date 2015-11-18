@@ -17,11 +17,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tarsem.bean.RoleBean;
-import com.tarsem.constant.Constant;
-import com.task.taskApplication.EditRoleActivity;
 import com.task.taskApplication.R;
-import com.task.taskApplication.UpdateRoleActivity;
+import com.taskism.bean.RoleBean;
+import com.taskism.constant.Constant;
+import com.taskism.taskApplication.EditRoleActivity;
+import com.taskism.taskApplication.UpdateRoleActivity;
 
 /**
  * @author asifa
@@ -92,7 +92,7 @@ public class CustomEditUserRoleAdapter extends BaseAdapter {
 			viewHolder.colorBar = (View) convertView
 					.findViewById(R.id.colorBar);
 			viewHolder.userRoleName = (TextView) convertView
-					.findViewById(R.id.userRoleName); 
+					.findViewById(R.id.userRoleName);
 			viewHolder.editUserRoleImage = (ImageView) convertView
 					.findViewById(R.id.editUserRoleImage);
 			viewHolder.deleteUserRoleImage = (ImageView) convertView
@@ -105,8 +105,17 @@ public class CustomEditUserRoleAdapter extends BaseAdapter {
 
 		RoleBean userRole = userRoleList.get(position);
 		viewHolder.userRoleName.setText(userRole.roleName);
-		viewHolder.colorBar.setBackgroundColor(Color.parseColor("#"
-				+ userRole.roleColor));
+		String colorCode = userRole.roleColor;
+		try {
+			if (colorCode.contains("\\")) {
+				colorCode = colorCode.split("\\")[1];
+			}
+			viewHolder.colorBar.setBackgroundColor(Color.parseColor("#"
+					+ colorCode));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		viewHolder.editUserRoleImage.setTag(position);
 		viewHolder.deleteUserRoleImage.setTag(position);
 		viewHolder.editUserRoleImage.setOnClickListener(new OnClickListener() {
@@ -114,7 +123,7 @@ public class CustomEditUserRoleAdapter extends BaseAdapter {
 			@Override
 			public void onClick(View v) {
 				int pos = (Integer) v.getTag();
-				int userId = Integer.parseInt(userRoleList.get(pos).roleName);
+				int userId = Integer.parseInt(userRoleList.get(pos).roleId);
 				Intent intent = new Intent(context, UpdateRoleActivity.class);
 				intent.putExtra(Constant.userid, userId);
 				context.startActivity(intent);

@@ -5,9 +5,9 @@ package com.taskism.adapter;
 
 import java.util.List;
 
-import com.tarsem.bean.CommentsBean;
 import com.task.taskApplication.R;
 import com.taskism.adapter.CustomTaskAdapter.ViewHolder;
+import com.taskism.bean.CommentsBean;
 
 import android.content.Context;
 import android.view.LayoutInflater;

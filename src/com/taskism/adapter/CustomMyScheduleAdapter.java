@@ -18,11 +18,11 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tarsem.bean.TaskListBean;
-import com.tarsem.constant.Constant;
-import com.task.taskApplication.CommentActivity;
-import com.task.taskApplication.MyScheduleTaskActivity;
 import com.task.taskApplication.R;
+import com.taskism.bean.TaskListBean;
+import com.taskism.constant.Constant;
+import com.taskism.taskApplication.CommentActivity;
+import com.taskism.taskApplication.MyScheduleTaskActivity;
 
 /**
  * @author Manpreet

@@ -14,8 +14,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.tarsem.bean.ScheduleDescriptionBean;
 import com.task.taskApplication.R;
+import com.taskism.bean.ScheduleDescriptionBean;
 import com.taskism.imageLoader.DownloadImage;
 
 /**

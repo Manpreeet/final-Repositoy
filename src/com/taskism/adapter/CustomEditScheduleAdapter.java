@@ -4,17 +4,28 @@
 package com.taskism.adapter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.tarsem.bean.ScheduledTaskBean;
 import com.task.taskApplication.R;
+import com.taskism.bean.EditScheduleBean;
+import com.taskism.bean.RoleBean;
+import com.taskism.bean.ScheduledTaskBean;
+import com.taskism.constant.Constant;
+import com.taskism.taskApplication.EditRoleActivity;
+import com.taskism.taskApplication.EditScheduleActivity;
+import com.taskism.taskApplication.UpdateRoleActivity;
+import com.taskism.taskApplication.UpdateScheuduleActivity;
 
 /**
  * @author asifa
@@ -22,14 +33,14 @@ import com.task.taskApplication.R;
  */
 public class CustomEditScheduleAdapter extends BaseAdapter {
 	private Context context;
-	private ArrayList<ScheduledTaskBean> scheduledTaskList;
+	private List<EditScheduleBean> scheduledTaskList;
 	private Activity activity;
 
 	/**
 	 * 
 	 */
 	public CustomEditScheduleAdapter(Context context,
-			ArrayList<ScheduledTaskBean> scheduledTaskList, Activity activity) {
+			List<EditScheduleBean> scheduledTaskList, Activity activity) {
 		this.scheduledTaskList = scheduledTaskList;
 		this.context = context;
 		this.activity = activity;
@@ -90,23 +101,67 @@ public class CustomEditScheduleAdapter extends BaseAdapter {
 					.findViewById(R.id.userName);
 			viewHolder.sceduledTaskTime = (TextView) convertView
 					.findViewById(R.id.sceduledTaskTime);
+			viewHolder.editScheduleImage = (ImageView) convertView
+					.findViewById(R.id.editScheduleImage);
+			viewHolder.deleteScheduleImage = (ImageView) convertView
+					.findViewById(R.id.deleteScheduleImage);
 
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
 		}
 
-		ScheduledTaskBean scheduledTaskDetail = scheduledTaskList.get(position);
-		viewHolder.sceduledTaskName.setText(scheduledTaskDetail
-				.getScheduledTaskName());
-		viewHolder.userName.setText(scheduledTaskDetail.getUserName());
-		viewHolder.sceduledTaskTime.setText(scheduledTaskDetail.getDuration());
+		EditScheduleBean scheduledTaskDetail = scheduledTaskList.get(position);
+		String taskDuration = scheduledTaskDetail.scheduleDetail.split("\n")[0];
+		String taskName = scheduledTaskDetail.scheduleDetail.split("\n")[1];
+		taskName = taskName.split("\\(")[1].split("\\)")[0];
+		viewHolder.sceduledTaskName.setText(taskName);
+		viewHolder.userName.setText(scheduledTaskDetail.scheduleName);
+		viewHolder.sceduledTaskTime.setText(taskDuration);
+
+		viewHolder.editScheduleImage.setTag(position);
+		viewHolder.deleteScheduleImage.setTag(position);
+
+		viewHolder.editScheduleImage
+				.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						int pos = (Integer) v.getTag();
+						int userId = Integer.parseInt(scheduledTaskList
+								.get(pos).shiftId);
+						Intent intent = new Intent(context,
+								UpdateScheuduleActivity.class);
+						intent.putExtra(Constant.userid, userId);
+						context.startActivity(intent);
+
+					}
+				});
+		viewHolder.deleteScheduleImage
+				.setOnClickListener(new View.OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+
+						int pos = (Integer) v.getTag();
+						EditScheduleBean editScheduleBean = scheduledTaskList
+								.get(pos);
+						String taskName = editScheduleBean.scheduleDetail
+								.split("\n")[1];
+						taskName = taskName.split("\\(")[1].split("\\)")[0];
+
+						((EditScheduleActivity) activity)
+								.showDeleteConfirmationPopup(
+										editScheduleBean.shiftId, taskName, pos);
+
+					}
+				});
 
 		return convertView;
 	}
 
 	public void updateScheduledTasKList(
-			ArrayList<ScheduledTaskBean> newScheduledTaskList) {
+			List<EditScheduleBean> newScheduledTaskList) {
 		scheduledTaskList.addAll(newScheduledTaskList);
 		notifyDataSetChanged();
 	}
@@ -116,5 +171,6 @@ public class CustomEditScheduleAdapter extends BaseAdapter {
 		TextView sceduledTaskName;
 		TextView userName;
 		TextView sceduledTaskTime;
+		ImageView editScheduleImage, deleteScheduleImage;
 	}
 }
