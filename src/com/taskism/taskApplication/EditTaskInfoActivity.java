@@ -1,5 +1,12 @@
 package com.taskism.taskApplication;
 
+import java.util.Calendar;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -7,8 +14,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -18,21 +23,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.task.taskApplication.R;
+import com.taskism.bean.EditTaskBean;
+import com.taskism.bean.RoleBean;
 import com.taskism.bean.RoleListBean;
 import com.taskism.constant.ApplicationConstant;
 import com.taskism.constant.Constant;
+import com.taskism.request.EditTaskAsyncTask;
 import com.taskism.request.RoleListAsyncTask;
 import com.taskism.request.ServerAsyncTask;
 import com.taskism.responsecallback.ResponseCallback;
 import com.taskism.utility.Utility;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Calendar;
-import java.util.List;
-import java.util.logging.Logger;
 
 public class EditTaskInfoActivity extends ParentActivity {
 	private EditText taskNameInput;
@@ -52,7 +52,7 @@ public class EditTaskInfoActivity extends ParentActivity {
 	private LinearLayout checkParentLayout;
 
 	Context context;
-	private int year, month, day;
+	private int year, month, day, taskId = 0;;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +60,52 @@ public class EditTaskInfoActivity extends ParentActivity {
 		setContentView(R.layout.activity_edit_task_info);
 		context = this;
 		findAttributesId();
-		initData();
+		getIntentData(savedInstanceState);
 		startRoleListService();
 
+		initData();
+
+	}
+
+	/**
+	 * developer:Manpreet date:19-Nov-2015 return:void description: method for
+	 * getIntent Data
+	 */
+	private void getIntentData(Bundle savedInstanceState) {
+		savedInstanceState = getIntent().getExtras();
+		if (savedInstanceState != null) {
+			taskId = savedInstanceState.getInt(Constant.userid);
+			// startTaskInfoServiceRequest();
+
+		}
+	}
+
+	private void startRoleListService() {
+		// progressDialog.show();
+		new RoleListAsyncTask(ApplicationConstant.appurl
+				+ ApplicationConstant.roleListRequestType + "&userid=62",
+				context, new ResponseCallback() {
+
+					@Override
+					public void onSuccessRecieve(Object object) {
+						List<RoleBean> list = (List<RoleBean>) object;
+						progressDialog.dismiss();
+						Log.i("New Task",
+								" Task Info data---" + list.toString());
+						setRoleListData(list);
+						startTaskInfoServiceRequest();
+						// showToastMessage("Successfully fetch role list data"
+						// +list);
+						// finish();
+					}
+
+					@Override
+					public void onErrorRecieve(Object object) {
+
+						progressDialog.dismiss();
+						showToastMessage((String) object);
+					}
+				}).execute();
 	}
 
 	private void findAttributesId() {
@@ -245,16 +288,25 @@ public class EditTaskInfoActivity extends ParentActivity {
 	}
 
 	private void startTaskInfoServiceRequest() {
-		new RoleListAsyncTask(ApplicationConstant.appurl
+		new EditTaskAsyncTask(ApplicationConstant.appurl
 				+ ApplicationConstant.taskinfoRequestType + "&userid=62"
-				+ "&taskid=" + "317", context, new ResponseCallback() {
+				+ "&taskid=" + taskId, context, new ResponseCallback() {
 
 			@Override
 			public void onSuccessRecieve(Object object) {
 
 				progressDialog.dismiss();
+
+				EditTaskBean editTaskBean = (EditTaskBean) object;
 				Log.i("New Task", "Edit TaskInfo---" + object.toString());
-				fetchTaskInfoData(object);
+
+				taskNameInput.setText(editTaskBean.taskName);
+
+				// onceInput.setText(editTaskBean.taskInstruction);
+				setRolesData(editTaskBean.roleId);
+				setMonthlyData(editTaskBean.monthlySchedule);
+
+				// fetchTaskInfoData(object);
 				showToastMessage("Successfully register on app"
 						+ object.toString());
 
@@ -276,7 +328,7 @@ public class EditTaskInfoActivity extends ParentActivity {
 				+ "&name=" + taskNameInput.getText().toString().trim()
 				+ "&once=" + onceInput.getText().toString().trim() + "&roles="
 				+ getSelectedRolesValue() + "&monthly="
-				+ getMonthlySelectedValue() + "&taskid=317", context,
+				+ getMonthlySelectedValue() + "&taskid=" + taskId, context,
 				new ResponseCallback() {
 
 					@Override
@@ -391,38 +443,11 @@ public class EditTaskInfoActivity extends ParentActivity {
 				.append(month).append("/").append(year));
 	}
 
-	private void startRoleListService() {
-		// progressDialog.show();
-		new RoleListAsyncTask(ApplicationConstant.appurl
-				+ ApplicationConstant.roleListRequestType + "&userid=62",
-				context, new ResponseCallback() {
-
-					@Override
-					public void onSuccessRecieve(Object object) {
-						List<RoleListBean> list = (List<RoleListBean>) object;
-						progressDialog.dismiss();
-						Log.i("New Task",
-								" Task Info data---" + list.toString());
-						setRoleListData(list);
-						// showToastMessage("Successfully fetch role list data"
-						// +list);
-						// finish();
-					}
-
-					@Override
-					public void onErrorRecieve(Object object) {
-
-						progressDialog.dismiss();
-						showToastMessage((String) object);
-					}
-				}).execute();
-	}
-
-	private void setRoleListData(List<RoleListBean> roleList) {
+	private void setRoleListData(List<RoleBean> list) {
 		LayoutInflater inflater = LayoutInflater.from(this);
-		roleIndexValue = new String[roleList.size()];
-		roles = new CheckBox[roleList.size()];
-		for (int i = 0; i < roleList.size(); i++) {
+		roleIndexValue = new String[list.size()];
+		roles = new CheckBox[list.size()];
+		for (int i = 0; i < list.size(); i++) {
 			View view = inflater.inflate(
 					R.layout.layout_role_list_checkbx_item, null);
 			// View hiddenInfo =
@@ -431,11 +456,10 @@ public class EditTaskInfoActivity extends ParentActivity {
 			CheckBox check = (CheckBox) view.findViewById(R.id.checkBoxItem);
 			check.setId(i);
 			roles[i] = check;
-			check.setText(roleList.get(i).getName());
-			roleIndexValue[i] = roleList.get(i).getRoleId();
+			check.setText(list.get(i).roleName);
+			roleIndexValue[i] = list.get(i).roleId;
 			checkParentLayout.addView(view);
 		}
-		startTaskInfoServiceRequest();
 	}
 
 }

@@ -16,6 +16,8 @@ import com.taskism.bean.CommentsBean;
 import com.taskism.bean.EditOtherUserProfileBean;
 import com.taskism.bean.EditRoleBean;
 import com.taskism.bean.EditScheduleBean;
+import com.taskism.bean.EditTaskBean;
+import com.taskism.bean.EditTaskScheduleBean;
 import com.taskism.bean.RoleBean;
 import com.taskism.bean.ScheduleDescriptionBean;
 import com.taskism.bean.TaskListBean;
@@ -476,7 +478,13 @@ public class CommonParser {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			responseObject = null;
+			responseArray = null;
+			System.gc();
+
 		}
+
 	}
 
 	/**
@@ -570,7 +578,58 @@ public class CommonParser {
 			responseCallback.onErrorRecieve("No record found");
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+			responseObject = null;
+			responseArray = null;
+			System.gc();
+
+		}
+
+	}
+
+	/**
+	 * 
+	 * developer:Manpreet date:19-Nov-2015 return:void description: method for
+	 * fetch task information
+	 */
+	public void fetchTaskInformation(String response,
+			ResponseCallback responseCallback) {
+		try {
+			EditTaskBean scheduleBean = new EditTaskBean();
+
+			responseObject = new JSONObject(response);
+			//responseArray = responseObject.getJSONArray("once");
+
+			scheduleBean.taskInstruction = responseObject.getString("instruct");
+			scheduleBean.taskName = responseObject.getString("name");
+			scheduleBean.roleId = responseObject.getString("roles");
+			scheduleBean.monthlySchedule = responseObject.getString("monthly");
+
+			/*if (responseArray != null) {
+				if (responseArray.length() != 0) {
+					scheduleBean.editTaskScheduleBeanList = new ArrayList<EditTaskScheduleBean>();
+					EditTaskScheduleBean editTaskScheduleBean = null;
+					for (int i = 0; i < responseArray.length(); i++) {
+						editTaskScheduleBean = new EditTaskScheduleBean();
+						editTaskScheduleBean.dateText = responseArray
+								.getJSONObject(i).getString("datetext");
+						editTaskScheduleBean.ScheduleId = responseArray
+								.getJSONObject(i).getString("scheduleid");
+						scheduleBean.editTaskScheduleBeanList
+								.add(editTaskScheduleBean);
+					}
+				}
+			}*/
+			responseCallback.onSuccessRecieve(scheduleBean);
+		} catch (Exception e) {
+			e.printStackTrace();
+			responseCallback.onErrorRecieve("server down");
+		} finally {
+			responseObject = null;
+			responseArray = null;
+			System.gc();
+
 		}
 
 	}

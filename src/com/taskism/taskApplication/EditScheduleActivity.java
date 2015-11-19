@@ -41,7 +41,7 @@ public class EditScheduleActivity extends ParentActivity {
 	private ProgressBar loadingProgress;
 	private SwipeRefreshLayout swipeRefresh;
 	private TextView noRecordFoundText;
-
+	
 	/*
 	 * (non-Javadoc)
 	 * 

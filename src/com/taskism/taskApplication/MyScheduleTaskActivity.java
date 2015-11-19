@@ -123,7 +123,7 @@ public class MyScheduleTaskActivity extends ParentActivity {
 
 			}
 		});
-	}
+ 	}
 
 	/**
 	 * developer:Manpreet date:27-Sep-2015 return:void description: method for
@@ -132,8 +132,8 @@ public class MyScheduleTaskActivity extends ParentActivity {
 	private void getTaskList() {
 		// http://taskism.com/webservice001/?action=allusertasks&date=2015-07-10&userid=14
 		new ServerAsyncTask(ApplicationConstant.appurl
-				+ ApplicationConstant.getMyScheduleListRequest + "&"
-				+ "date=2015-07-10" + "&userid=14", context,
+				+ ApplicationConstant.allUserScheduleTask + "&"
+				+ "date=2015-11-16" + "&userid=14", context,
 				new ResponseCallback() {
 
 					@Override

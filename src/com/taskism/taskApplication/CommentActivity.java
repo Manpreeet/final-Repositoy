@@ -95,10 +95,9 @@ public class CommentActivity extends ParentActivity {
 	private void getUserComments(int taskId2, int scheduleId2) {
 		// http://taskism.com/webservice001/?action=commentday&date=2015-08-18&scheduleid=6181&taskid=222&userid=14
 
-		new CommentsAsyncTask(
-				"http://taskism.com/webservice001/?action=commentday&date="
-						+ Utility.getDate() + "&scheduleid=" + scheduleId2
-						+ "&taskid=" + taskId2 + "&userid=14", context,
+		new CommentsAsyncTask(ApplicationConstant.appurl
+				+ "commentday&date=2015-11-16" + "&scheduleid=" + scheduleId2
+				+ "&taskid=" + taskId2 + "&userid=14", context,
 				new ResponseCallback() {
 
 					@SuppressWarnings("unchecked")
@@ -112,6 +111,9 @@ public class CommentActivity extends ParentActivity {
 								commentsBeans);
 						commentsList.setAdapter(commentsAdapter);
 						commentsAdapter.notifyDataSetChanged();
+						((TextView) findViewById(R.id.noRecordFoundText))
+								.setVisibility(View.GONE);
+
 					}
 
 					@Override
@@ -156,12 +158,10 @@ public class CommentActivity extends ParentActivity {
 	 * post comment on server
 	 */
 	private void postComment(String string) {
-		new SendCommentAsyncTask(
-				"http://taskism.com/webservice001/?action=commentcreate&date="
-						+ Utility.getDate() + "&scheduleid=" + scheduleId
-						+ "&taskid=" + taskId + "&userid="
-						+ Constant.getLoggedUserId(context) + "&comment="
-						+ commentInput.getText().toString().trim(), context,
+		new SendCommentAsyncTask(ApplicationConstant.appurl
+				+ "commentcreate&date=2015-11-16" + "&scheduleid=" + scheduleId
+				+ "&taskid=" + taskId + "&userid=14" + "&comment="
+				+ commentInput.getText().toString().trim(), context,
 				new CommentsCallback() {
 
 					@Override

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" 
+        android:background="#f2f2f2">
+
+        <RelativeLayout
+            android:id="@+id/headerParent"
+            android:layout_width="match_parent"
+            android:layout_height="40dip"
+            android:background="#404040" >
+
+            <TextView
+                android:id="@+id/titleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Select User"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" >
+            </TextView>
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/selectionList"
+            android:layout_width="match_parent"
+            android:layout_height="190dip"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/headerParent"
+            android:scrollbars="none" >
+        </ListView>
+
+        
+    </RelativeLayout>
+
+</RelativeLayout>

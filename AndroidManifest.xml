@@ -90,6 +90,9 @@
         <activity
             android:name="com.taskism.taskApplication.AddNewScheduleActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.taskism.taskApplication.EditTaskActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

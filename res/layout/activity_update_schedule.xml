@@ -37,21 +37,24 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/headerlayout"
         android:layout_marginLeft="10dip"
-        android:layout_marginTop="20dip"
+        android:layout_marginTop="15dip"
         android:text="Role"
         android:textColor="@android:color/black"
         android:textSize="17sp"
         android:textStyle="bold" />
 
-    <Spinner
+    <Button
         android:id="@+id/roleSpinner"
         android:layout_width="140dip"
-        android:layout_height="wrap_content"
+        android:layout_height="39dip"
         android:layout_below="@+id/headerlayout"
         android:layout_marginLeft="10dip"
         android:layout_marginTop="5dip"
         android:layout_toRightOf="@+id/roleLabel"
-        android:textSize="17sp"
+        android:background="@drawable/input"
+        android:text="Select Role"
+        android:onClick="onClickRole"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
     <TextView
@@ -60,21 +63,24 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/roleLabel"
         android:layout_marginLeft="10dip"
-        android:layout_marginTop="40dip"
+        android:layout_marginTop="35dip"
         android:text="User"
         android:textColor="@android:color/black"
         android:textSize="17sp"
         android:textStyle="bold" />
 
-    <Spinner
+    <Button
         android:id="@+id/userSpinner"
         android:layout_width="140dip"
-        android:layout_height="wrap_content"
+        android:layout_height="38dip"
         android:layout_below="@+id/roleLabel"
         android:layout_marginLeft="10dip"
         android:layout_marginTop="25dip"
         android:layout_toRightOf="@+id/userLabel"
-        android:textSize="17sp"
+        android:background="@drawable/input"
+        android:text="Select User"
+        android:textSize="15sp"
+        android:onClick="onClickUser"
         android:textStyle="bold" />
 
     <TextView
@@ -136,13 +142,21 @@
         android:layout_width="match_parent"
         android:layout_height="40dip"
         android:layout_below="@+id/stopDateLabel"
-        android:layout_marginTop="20dip"
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
+        android:layout_marginTop="20dip"
         android:background="#70b500"
         android:onClick="onClickSave"
         android:text="Save"
         android:textColor="@android:color/white" >
     </Button>
-
+<ProgressBar
+        android:id="@+id/loadingProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="5dip"
+        android:indeterminateDrawable="@drawable/my_progress_indeterminate"
+        android:visibility="gone" />
+    
 </RelativeLayout>

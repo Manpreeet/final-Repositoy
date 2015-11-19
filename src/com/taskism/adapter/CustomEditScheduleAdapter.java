@@ -128,11 +128,28 @@ public class CustomEditScheduleAdapter extends BaseAdapter {
 					@Override
 					public void onClick(View v) {
 						int pos = (Integer) v.getTag();
+
 						int userId = Integer.parseInt(scheduledTaskList
 								.get(pos).shiftId);
+						String startTime, endTime;
+
+						startTime = scheduledTaskList.get(pos).scheduleDetail
+								.split("\n")[0];
+						startTime = startTime.split("-")[0];
+						endTime = scheduledTaskList.get(pos).scheduleDetail
+								.split("\n")[0].split("-")[1];
+						String taskName = scheduledTaskList.get(pos).scheduleDetail
+								.split("\n")[1];
+						taskName = taskName.split("\\(")[1].split("\\)")[0];
 						Intent intent = new Intent(context,
 								UpdateScheuduleActivity.class);
 						intent.putExtra(Constant.userid, userId);
+						intent.putExtra("username",
+								scheduledTaskList.get(pos).scheduleName);
+						intent.putExtra("rolename", taskName);
+						intent.putExtra("starttime", startTime);
+						intent.putExtra("endtime", endTime);
+
 						context.startActivity(intent);
 
 					}

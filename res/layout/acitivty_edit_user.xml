@@ -18,9 +18,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:contentDescription="@null"
                 android:onClick="onClickBack"
                 android:padding="5dip"
-                android:contentDescription="@null"
                 android:src="@drawable/back" />
 
             <TextView
@@ -265,12 +265,23 @@
                     android:padding="5dip" >
                 </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/accessParent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:orientation="vertical"
+                    android:padding="5dip" >
+                </LinearLayout>
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dip"
                     android:layout_marginRight="10dip"
-                    android:padding="5dip" >
+                    android:padding="5dip"
+                    android:visibility="gone" >
 
                     <TextView
                         android:id="@+id/permissionText"

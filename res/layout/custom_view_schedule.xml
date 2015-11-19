@@ -30,7 +30,8 @@
             android:layout_width="120dip"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Sun 09/06/2015"
+            android:layout_marginLeft="10dip"
+            android:text="Sun"
             android:textColor="@android:color/white" />
 
         <TextView
@@ -38,7 +39,7 @@
             android:layout_width="120dip"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Mon 10/06/2015"
+            android:text="Mon"
             android:textColor="@android:color/white" />
 
         <TextView
@@ -46,7 +47,7 @@
             android:layout_width="120dip"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Tue 10/06/2015"
+            android:text="Tue"
             android:textColor="@android:color/white" />
 
         <TextView
@@ -54,7 +55,7 @@
             android:layout_width="120dip"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Wed 10/06/2015"
+            android:text="Wed"
             android:textColor="@android:color/white" />
 
         <TextView
@@ -62,7 +63,7 @@
             android:layout_width="120dip"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Thu 10/06/2015"
+            android:text="Thu"
             android:textColor="@android:color/white" />
 
         <TextView
@@ -70,14 +71,15 @@
             android:layout_width="120dip"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="Fri 10/06/2015"
+            android:text="Fri"
             android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/saturdaySchedule"
             android:layout_width="120dip"
             android:layout_height="wrap_content"
-            android:text="Sat 10/06/2015"
+            android:layout_gravity="center_vertical"
+            android:text="Sat"
             android:textColor="@android:color/white" />
     </LinearLayout>
 

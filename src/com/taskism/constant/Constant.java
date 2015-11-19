@@ -25,11 +25,11 @@ public class Constant {
 	public static final String emailFormatValidation = "Email format is invalid";
 	public static final String addNewTaskDialogTitle = "Add Image";
 	public static final String addNewTaskDialogDescription = "Successfully add Task do you want to add image with task?";
-	
+
 	public static final String addNewTaskDialogErrorMessage = "Add Task Information first";
-	
-	
-	
+	public static final String emptyFieldValidation = "Enter information first";
+	public static final String confirmPasswordValidation = "Confirm password not same as password";
+
 	public static final String successKey = "success";
 	public static int responseTypeSuccess = 0;
 	public static int responseTypeFailure = 0;
@@ -48,15 +48,14 @@ public class Constant {
 	public static final String userInfo = "userInfo";
 	static SharedPreferences sharedPreferences;
 
-	
 	/**
-	 *  internet connection messages
-	 *  
+	 * internet connection messages
+	 * 
 	 */
 	public static final String internetConnectionTitle = "Internet Connection";
 	public static final String internetConnectionMessage = "no internet access";
 	public static final String internetConnectionPopupButtonText = "Ok";
-	
+
 	/**
 	 * 
 	 * developer:Manpreet date:27-Sep-2015 return:void description: method for

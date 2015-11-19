@@ -32,6 +32,7 @@ public class AddNewTaskAsyncTask extends AsyncTask<Void, Void, Void> {
 
 	public AddNewTaskAsyncTask(String url, Context context,
 			ResponseCallback responseCallback, String type) {
+
 		this.url = url;
 		this.context = context;
 		this.responseCallback = responseCallback;

@@ -209,6 +209,8 @@ public class NewTaskActivity extends ParentActivity {
 	 * set task request on server
 	 */
 	private void sendNewTaskRequestToServer() {
+		// http://taskism.com/webservice001/?action=tasknew&userid=62&name=CallAriel&once=2015-08-27&roles=7,11&monthly=34,11,26,30,41,51
+
 		new AddNewTaskAsyncTask(ApplicationConstant.appurl
 				+ ApplicationConstant.newTaskRequestType + "&userid=62"
 				+ "&name=" + taskNameInput.getText().toString().trim()
@@ -340,8 +342,8 @@ public class NewTaskActivity extends ParentActivity {
 	};
 
 	private void setOnceDate(int year, int month, int day) {
-		onceInput.setText(new StringBuilder().append(day).append("/")
-				.append(month).append("/").append(year));
+		onceInput.setText(new StringBuilder().append(year).append("-")
+				.append(month).append("-").append(day));
 	}
 
 	public void onClickBack(View view) {

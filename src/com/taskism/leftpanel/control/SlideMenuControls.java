@@ -105,7 +105,7 @@ public class SlideMenuControls extends ParentActivity {
 						clickEvent(ctx, EditTaskActivity.class);
 						closeMEnu(ctx);
 
-						if (new Utility().getTaskAdminStatus(ctx)) {
+/*						if (new Utility().getTaskAdminStatus(ctx)) {
 
 							clickEvent(ctx, EditTaskActivity.class);
 							closeMEnu(ctx);
@@ -115,7 +115,7 @@ public class SlideMenuControls extends ParentActivity {
 									Toast.LENGTH_LONG).show(); //
 							// showToastMessage("you dont have permission");
 						}
-
+*/
 					}
 				});
 		ctx.findViewById(R.id.editScheduleParent).setOnClickListener(
@@ -226,7 +226,7 @@ public class SlideMenuControls extends ParentActivity {
 	private void clickEvent(Activity context, Class class1) {
 
 		try {
-			closeMEnu(context);
+			//closeMEnu(context);
 			Intent i = new Intent(context.getApplicationContext(), class1);
 			i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -236,7 +236,7 @@ public class SlideMenuControls extends ParentActivity {
 					R.anim.slide_back_out);
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
 

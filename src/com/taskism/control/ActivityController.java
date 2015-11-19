@@ -12,6 +12,7 @@ import com.taskism.taskApplication.CommentActivity;
 import com.taskism.taskApplication.EditUserActivity;
 import com.taskism.taskApplication.ForgetPasswordActivity;
 import com.taskism.taskApplication.LoginActivity;
+import com.taskism.taskApplication.NewTaskActivity;
 import com.taskism.taskApplication.RegistrationActivity;
 import com.taskism.taskApplication.UsersScheduleTaskActivity;
 
@@ -138,6 +139,23 @@ public class ActivityController {
 				activity.finish();
 			}
 			break;
+
+		case 8:
+			intent = new Intent(activity, NewTaskActivity.class);
+			if (bundle != null) {
+				intent.putExtra(String.valueOf(Constant.AddNewTaskActivity),
+						bundle);
+
+			}
+			activity.startActivity(intent);
+			activity.overridePendingTransition(R.anim.slide_in,
+					R.anim.slide_out);
+
+			if (flag) {
+				activity.finish();
+			}
+			break;
+
 		case 10:
 			intent = new Intent(activity, AddNewRoleActivity.class);
 			if (bundle != null) {
